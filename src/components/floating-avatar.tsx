@@ -97,7 +97,7 @@ const FloatingAvatar = () => {
                 stiffness: 300,
                 damping: 20,
               }}
-              className="absolute top-20 left-58 z-5 sm:top-28 sm:left-64 md:top-36 md:left-80"
+              className="absolute top-20 left-58 z-20 sm:top-28 sm:left-64 md:top-36 md:left-80"
             >
               <SpeechBubble
                 direction="left"
@@ -111,14 +111,7 @@ const FloatingAvatar = () => {
                 </p>
 
                 <div className="flex gap-2">
-                  <motion.button
-                    onClick={handleDismiss}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex size-8 items-center justify-center bg-red-500 p-2 font-bold text-white transition-all hover:bg-red-600"
-                    aria-label="Close"
-                  >
-                    <X className="size-8" />
-                  </motion.button>
+                 
 
                   <a
                     href={siteConfig.telegram}
@@ -129,6 +122,15 @@ const FloatingAvatar = () => {
                     <Send className="h-4 w-4" />
                     <span className="text-xs uppercase">Chat</span>
                   </a>
+
+                   <motion.button
+                    onClick={handleDismiss}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex size-8 items-center justify-center bg-red-500 p-2 font-bold text-white transition-all hover:bg-red-600"
+                    aria-label="Close"
+                  >
+                    <X className="size-8" />
+                  </motion.button>
                 </div>
               </SpeechBubble>
             </motion.div>
