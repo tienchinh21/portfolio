@@ -1,5 +1,5 @@
 
-# Stark's Developer Portfolio
+# Stark's Portfolio
 
 ![Portfolio Screenshot](public/projects/portfolio-screenshot.png)
 
@@ -32,12 +32,6 @@ A modern, interactive **[developer portfolio](https://next-portfolio-stark.verce
 - [TanStack Query](https://tanstack.com/query)
 - [Day.js](https://day.js.org/)
 - [Lodash](https://lodash.com/)
-
-**Integrations & Features**
-- GitHub Activity with [react-github-calendar](https://github.com/benji6/react-github-calendar)
-- Real-time Guestbook powered by Prisma + Server Components
-- Animated Floating Avatar using Motion + Custom Robot Components
-- Responsive layout with dynamic themes via `next-themes`
 
 ---
 
