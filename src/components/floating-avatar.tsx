@@ -9,6 +9,7 @@ import SpeechBubble from "@/components/ui/speech-bubble";
 import { X, Send } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { useLocalStorage } from "@uidotdev/usehooks";
+import dynamic from "next/dynamic";
 
 const FloatingAvatar = () => {
   const pathname = usePathname();
@@ -138,4 +139,6 @@ const FloatingAvatar = () => {
   );
 };
 
-export default FloatingAvatar;
+export default dynamic(() => Promise.resolve(FloatingAvatar), {
+  ssr: false,
+});

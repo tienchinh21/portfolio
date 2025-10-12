@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import env from "@/config/env";
 import FloatingAvatar from "@/components/floating-avatar";
+// import FloatingAvatar from "@/components/floating-avatar";
 
 
 export const metadata: Metadata = {
