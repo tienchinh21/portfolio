@@ -97,7 +97,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-5 flex items-center gap-4 mx-auto"
+              className="mt-5 flex  items-center gap-4 max-md:justify-center max-md:mx-auto"
             >
               <Button
                 asChild

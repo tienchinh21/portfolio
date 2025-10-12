@@ -158,11 +158,11 @@ const Projects = () => {
                 {/*  Buttons */}
                 <div className="flex flex-wrap gap-3">
                   <Button
-                  asChild
+                    asChild
                     variant="default"
                     size="lg"
                     className="group/btn relative border-2 font-medium"
-                    disabled={Boolean(project.github)}
+                    disabled={!project.github}
                   >
                     <a
                       href={project.github || undefined}
@@ -176,11 +176,11 @@ const Projects = () => {
                   </Button>
 
                   <Button
-                  asChild
+                    asChild
                     variant="outline"
                     size="lg"
                     className="group/btn border-2 font-medium"
-                    disabled={Boolean(project.live)}
+                    disabled={!project.live}
                   >
                     <a
                       href={project.live || undefined}
