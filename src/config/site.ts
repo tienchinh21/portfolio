@@ -4,7 +4,7 @@ import env from "./env";
 
 export const siteConfig = {
     title: "Siddharth Sharma",
-    description: "A portfolio template built with Next.js, Tailwind CSS, and TypeScript. ",
+    description: "my personal portfolio website showcasing projects, skills, and other cool stuffs",
     url: env.NEXT_PUBLIC_APP_URL,
     twitter: "https://x.com/NotStark101",
     linkedin: "https://www.linkedin.com/404",
