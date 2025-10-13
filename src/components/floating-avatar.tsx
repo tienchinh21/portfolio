@@ -28,13 +28,15 @@ const FloatingAvatar = () => {
     const handleScroll = () => {
       const scrolled = el?.scrollTop ?? 0;
 
-      !isVisible && setIsVisible(scrolled > window.innerHeight * 2 && !isDismissed);
+      if (!isVisible) {
+        setIsVisible(scrolled > window.innerHeight * 2 && !isDismissed);
+      }
     };
 
     el?.addEventListener("scroll", handleScroll);
     handleScroll();
     return () => el?.removeEventListener("scroll", handleScroll);
-  }, [isDismissed, pathname]);
+  }, [isDismissed, pathname, isVisible]);
 
   const handleDismiss = () => {
     setIsDismissed(true);
@@ -111,8 +113,6 @@ const FloatingAvatar = () => {
                 </p>
 
                 <div className="flex gap-2">
-                 
-
                   <a
                     href={siteConfig.telegram}
                     target="_blank"
@@ -123,7 +123,7 @@ const FloatingAvatar = () => {
                     <span className="text-xs uppercase">Chat</span>
                   </a>
 
-                   <motion.button
+                  <motion.button
                     onClick={handleDismiss}
                     whileTap={{ scale: 0.95 }}
                     className="flex size-8 items-center justify-center bg-red-500 p-2 font-bold text-white transition-all hover:bg-red-600"
