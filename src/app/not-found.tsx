@@ -32,7 +32,7 @@ const DesktopNavigationPanel = ({
       className={`absolute top-0 z-50 flex h-full w-[28.5%] items-end font-mono max-md:hidden ${sideClasses}`}
     >
       <div className="group relative h-35 w-full overflow-hidden">
-        {/* Hover gradient effect */}
+        {/* Hover gradient  */}
         <div className="from-muted/30 absolute inset-0 bg-gradient-to-t to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
         <div className="relative grid h-full w-full place-content-center">
@@ -182,7 +182,7 @@ const NotFound = () => {
         </div>
       </div>
 
-      {/* Robot Character with Screen */}
+      {/* Robot  */}
       <Robot className="xs:w-[600px] md:xs:-bottom-40 md:xs:w-[700px] pointer-events-none absolute top-1/2 left-1/2 w-[500px] -translate-x-1/2 -translate-y-1/2 opacity-90 select-none sm:w-[700px] md:top-auto md:bottom-16 md:w-[800px] md:translate-y-0 md:sm:-bottom-50 lg:-bottom-92 lg:w-[1200px]">
         <div className="noise-screen grid place-content-center">
           <motion.h1
@@ -203,7 +203,7 @@ const NotFound = () => {
         </div>
       </Robot>
 
-      {/* Screen Divider Line */}
+      {/*  Line */}
       <motion.div
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
@@ -212,7 +212,7 @@ const NotFound = () => {
         style={{ originX: 0.5 }}
       />
 
-      {/* Desktop Side Panels */}
+     
       <DesktopNavigationPanel
         side="left"
         onClick={handleGoBack}
@@ -227,7 +227,7 @@ const NotFound = () => {
         icon={<ArrowRight className="size-4" />}
       />
 
-      {/* Mobile Navigation */}
+    
       <MobileNavigation onBack={handleGoBack} onHome={handleGoHome} />
     </main>
   );
