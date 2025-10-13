@@ -28,7 +28,7 @@ const FloatingAvatar = () => {
     const handleScroll = () => {
       const scrolled = el?.scrollTop ?? 0;
 
-      setIsVisible(scrolled > window.innerHeight * 2 && !isDismissed);
+      !isVisible && setIsVisible(scrolled > window.innerHeight * 2 && !isDismissed);
     };
 
     el?.addEventListener("scroll", handleScroll);
