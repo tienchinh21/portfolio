@@ -127,7 +127,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
           }
         `}
       </style>
-      {/* Blur Background  */}
+     
       <div className="absolute inset-0 size-full before:absolute before:inset-0 before:z-10 before:size-full before:bg-black/20 before:backdrop-blur-sm">
         {coverImage && (
           <img
@@ -347,4 +347,4 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({
   );
 };
 
-export default React.memo(MusicPlayer);
+export default MusicPlayer;

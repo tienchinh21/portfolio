@@ -86,7 +86,7 @@ Deployed easily via [Vercel](https://vercel.com/) (recommended).
 | ------------ | ---------------------------------------------------------------- |
 | 💬 Telegram  | [https://t.me/EternalVortex](https://t.me/EternalVortex)      
 | 🐦 Twitter   | [https://twitter.com/NotStark101](https://twitter.com/NotStark101) |         |
-| 💻 Discord   | `notfound`                                            |
+| 💻 Discord   | `_notstark`                                            |
               
 ---
 
