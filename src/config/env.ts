@@ -16,7 +16,7 @@ const env = createEnv({
     GOOGLE_CLIENT_SECRET: z.string().min(1),
     BETTER_AUTH_SECRET: z.string().min(1),
     BETTER_AUTH_URL: z.url().default("http://localhost:3000"),
-    UNAMI_API_KEY: z.string().min(1),
+    UMAMI_API_KEY: z.string().min(1),
     GITHUB_TOKEN: z.string().min(1)
   },
   /*
@@ -49,7 +49,7 @@ const env = createEnv({
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET,
     BETTER_AUTH_URL: process.env.BETTER_AUTH_URL,
-    UNAMI_API_KEY: process.env.UNAMI_API_KEY,
+    UMAMI_API_KEY: process.env.UMAMI_API_KEY,
     NEXT_PUBLIC_AVAILABLE_STATUS: process.env.NEXT_PUBLIC_AVAILABLE_STATUS,
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN

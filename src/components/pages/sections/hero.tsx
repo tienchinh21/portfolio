@@ -12,7 +12,7 @@ import { motion } from "motion/react";
 import Link from "next/link";
 
 const Hero = () => {
-  const { data: unamiStats } = useQuery({
+  const { data: umamiStats } = useQuery({
     queryKey: ["pageViews"],
     queryFn: clientApi.views.getStats,
   });
@@ -131,7 +131,7 @@ const Hero = () => {
           {[
             {
               label: "Portfolio views",
-              value: unamiStats?.data?.pageviews ?? 0,
+              value: umamiStats?.data?.pageviews ?? 0,
             },
             { label: "Years of Experience", value: 2 },
             { label: "Projects Shipped", value: 8 },

@@ -14,7 +14,7 @@ export async function GET() {
             `https://api.umami.is/v1/websites/${env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}/stats?startAt=${startAt}&endAt=${endAt}`,
             {
                 headers: {
-                    "x-umami-api-key": env.UNAMI_API_KEY,
+                    "x-umami-api-key": env.UMAMI_API_KEY,
                     "Accept": "application/json",
 
                 },

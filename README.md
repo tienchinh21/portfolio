@@ -25,7 +25,7 @@ A modern, interactive **[developer portfolio](https://next-portfolio-stark.verce
 - [Prisma ORM 6](https://www.prisma.io/) 
 - [Better Auth](https://better-auth.dev/)
 - [Zod](https://zod.dev/) — for runtime schema validation
-- [Unami](https://umami.is/) — Analytics
+- [Umami](https://umami.is/) — Analytics
 
 **State & Utilities**
 - [Zustand](https://github.com/pmndrs/zustand)
