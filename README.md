@@ -90,7 +90,13 @@ Deployed easily via [Vercel](https://vercel.com/) (recommended).
               
 ---
 
-**⭐ If you liked this project, give it a star — it helps a lot!**
 
----
+
+## Star History
+**⭐ If you liked this project, give it a star — it helps a lot!**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date&theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date" />
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Notstark/Portfolio&type=Date" />
+</picture>
 
