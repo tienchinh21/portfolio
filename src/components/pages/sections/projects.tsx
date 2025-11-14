@@ -13,37 +13,37 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
-      title: "Developer Portfolio",
+      title: "Portfolio Cá Nhân",
       description:
-        "A personal portfolio website showcasing projects, skills, and contact information.",
+        "Website portfolio cá nhân tôi, bao gồm các dự án, kỹ năng, và thông tin liên hệ.",
       tags: ["Portfolio", "Fullstack", "Personal"],
       github: "https://github.com/NotStark/portfolio",
       image: "/projects/portfolio-screenshot.png",
       live: env.NEXT_PUBLIC_APP_URL,
-      date: "Sep, 2025",
+      date: "Tháng 10, 2025",
       status: "completed",
     },
-    {
-      title: "Telegram Bot",
-      description: "A telegram group management bot built with Pyrogram.",
-      tags: ["Bot", "Management", "Telegram"],
-      github: "https://github.com/Notstark/TelegramBot",
-      image: "/projects/telegrambot-screenshot.png",
-      live: "https://t.me/HyugaGuardianBot",
-      date: "Oct, 2024",
-      status: "completed",
-    },
-    {
-      title: "Anime Edge",
-      description:
-        "A feature-rich anime streaming platform built with Next.js, offering fast search, curated collections, and a smooth viewing experience.",
-      tags: ["Anime", "Streaming", "Fullstack"],
-      github: null,
-      image: "/projects/animeedge-screenshot.png",
-      live: null,
-      date: "Dec, 2024",
-      status: "completed",
-    },
+    // {
+    //   title: "Telegram Bot",
+    //   description: "A telegram group management bot built with Pyrogram.",
+    //   tags: ["Bot", "Management", "Telegram"],
+    //   github: "https://github.com/Notstark/TelegramBot",
+    //   image: "/projects/telegrambot-screenshot.png",
+    //   live: "https://t.me/HyugaGuardianBot",
+    //   date: "Oct, 2024",
+    //   status: "completed",
+    // },
+    // {
+    //   title: "Anime Edge",
+    //   description:
+    //     "A feature-rich anime streaming platform built with Next.js, offering fast search, curated collections, and a smooth viewing experience.",
+    //   tags: ["Anime", "Streaming", "Fullstack"],
+    //   github: null,
+    //   image: "/projects/animeedge-screenshot.png",
+    //   live: null,
+    //   date: "Dec, 2024",
+    //   status: "completed",
+    // },
   ];
 
   const tagColors = {

@@ -59,7 +59,7 @@ const Hero = () => {
               </div>
               <div className="h-px w-12 bg-[#e1e1e1]" />
               <span className="text-foreground/50 font-mono text-xs md:text-sm">
-                Full-Stack Developer
+                Front-End Developer
               </span>
             </motion.div>
 
@@ -70,10 +70,10 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-incognito mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-6xl"
             >
-              <span className="text-foreground">Hey, I&apos;m </span>
+              <span className="text-foreground">Xin chào, Tôi là </span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Siddharth", "Stark"]}
+                  text={["Nguyễn Tiến Chính", "Chính"]}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -89,15 +89,15 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
             >
-              Fullstack developer with a passion for building web applications.
-              I specialize in React, Next.js, Node.js, and TypeScript.
+              Front-End developer với đam mê đam mê xây dựng ứng dụng web. Tôi
+              chuyên về React, Next.js, Node.js và TypeScript.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-5 flex  items-center gap-4 max-md:justify-center max-md:mx-auto"
+              className="mt-5 flex items-center gap-4 max-md:mx-auto max-md:justify-center"
             >
               <Button
                 asChild
@@ -105,7 +105,7 @@ const Hero = () => {
                 className="group/btn border-2 font-medium"
               >
                 <a href={"#contact"}>
-                  Lets Connect
+                  Cho phép kết nối
                   <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
               </Button>
@@ -117,7 +117,7 @@ const Hero = () => {
               >
                 <Link href={"/resume.pdf"}>
                   <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
-                  Download resume
+                  Tải sơ yếu lý lịch xuống
                 </Link>
               </Button>
             </motion.div>
@@ -133,7 +133,7 @@ const Hero = () => {
               label: "Portfolio views",
               value: umamiStats?.data?.pageviews ?? 0,
             },
-            { label: "Years of Experience", value: 2 },
+            { label: "Years of Experience", value: 1 },
             { label: "Projects Shipped", value: 8 },
             { label: "Happy Clients", value: 5 },
           ].map((stat, i) => (
@@ -156,7 +156,7 @@ const Hero = () => {
         </div>
 
         <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex">
-          SCROLL DOWN
+          KÉO XUỐNG
           <ArrowDownSquareIcon className="size-4 animate-pulse" />
         </div>
       </div>

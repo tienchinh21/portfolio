@@ -25,13 +25,14 @@ const About = () => {
           <HeadingLine className="mt-6" lineWidth={40} />
 
           <Robot className="absolute top-6 -right-8 z-5 w-64 font-mono text-white max-md:scale-x-[-1] md:top-8 md:right-4">
-            <div className="max-md:scale-x-[-1]">Hey👋</div>
+            <div className="max-md:scale-x-[-1]">Xin chào!</div>
           </Robot>
 
           <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
             <div className="p-6">
               <p className="">
-                I build fast, friendly products that make users smile
+                Tôi xây dựng sản phẩm nhanh chóng, thân thiện, tạo ra cảm giác
+                hạnh phúc cho người dùng
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-6 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -41,12 +42,11 @@ const About = () => {
                     />
                   </span>
                 </span>
-                —and sometimes their dogs too.
               </p>
 
               <p className="">
-                Stack: Next.js, React, TypeScript, Tailwind. Clean APIs, tiny
-                micro‑interactions, big delight
+                Công nghệ: Next.js, React, TypeScript, Tailwind. APIs sạch, giao
+                diện đẹp, độ hấp dẫn lớn
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -60,7 +60,7 @@ const About = () => {
               </p>
 
               <p className="">
-                Off‑duty: coffee, sketching animations, and One Piece marathons
+                Sở thích: Mattcha Latte và Mattcha Latte.
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -74,8 +74,8 @@ const About = () => {
               </p>
 
               <p className="">
-                Best in small teams: quick loops, clear comms, high‑fives after
-                deploy
+                Tôi có kỹ năng làm việc nhóm tốt, luôn đưa nhóm và các thành
+                viên đứng đầu hướng tới những sản phẩm tốt nhất.
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -91,7 +91,8 @@ const About = () => {
               </p>
 
               <p>
-                Got a messy brief or a half‑baked idea?
+                Có ý tưởng tốt, hãy liên hệ với tôi để thảo luận và xây dựng sản
+                phẩm tốt nhất.
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -101,7 +102,7 @@ const About = () => {
                     />
                   </span>
                 </span>
-                Let’s turn it into something real.
+                Hãy chuyển nó thành một sản phẩm thực tế.
               </p>
             </div>
 
@@ -113,7 +114,7 @@ const About = () => {
                 className="group border-2 font-medium"
               >
                 <a href="#contact">
-                  Contact Me
+                  Liên hệ tôi
                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </Button>
@@ -143,16 +144,16 @@ const About = () => {
                 <div className="text-center">
                   <div className="border-foreground/20 bg-muted/20 mb-4 overflow-hidden rounded-lg border-2 border-dashed p-4">
                     <img
-                      src="/ascii-art-profile.png"
+                      src="/tc1.png"
                       alt="ASCII"
                       className="-mb-5 h-auto w-full object-cover object-center dark:invert"
                     />
                   </div>
                   <h3 className="font-incognito text-2xl font-semibold">
-                    Siddharth
+                    Nguyễn Tiến Chính
                   </h3>
                   <p className="text-foreground/60 mt-1 font-mono text-sm">
-                    @stark
+                    @tienchinh21
                   </p>
 
                   {/* Status badges */}
@@ -176,8 +177,8 @@ const About = () => {
                         ? "Not Available"
                         : "Available"}
                     </Badge>
-                    <Badge variant="outline">2+ Years</Badge>
-                    <Badge variant="outline">Full-Stack</Badge>
+                    <Badge variant="outline">1+ Years</Badge>
+                    <Badge variant="outline">Front-End Developer</Badge>
                   </div>
                 </div>
               </div>

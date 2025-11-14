@@ -11,7 +11,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useLocalStorage } from "usehooks-ts";
 import type { DpadButtonLabel } from "@/components/ui/playdate-console";
 import { cn } from "@/lib/utils";
 
@@ -57,11 +57,10 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       t: number;
     } | null>(null);
 
-  
     const [playEatFood] = useSoundCustom("/sfx/food.mp3", { volume: 0.5 });
     const [playBackground, { stop: stopBackground }] = useSoundCustom(
       "/sfx/snake-background.mp3",
-      { volume: 0.25 , loop: true }, 
+      { volume: 0.25, loop: true },
     );
 
     const directionRef = useRef<Direction>("right");
@@ -187,7 +186,7 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       if (!willGrow) newSnake.pop();
 
       if (willGrow) {
-        playEatFood();            
+        playEatFood();
         animateFlash(newHead.x, newHead.y);
         navigator.vibrate?.(20);
 
@@ -249,14 +248,13 @@ const SnakeGame = forwardRef<SnakeGameHandle, SnakeGameProps>(
       }
     }, [dims.w, dims.h]);
 
-    
     useEffect(() => {
       if (!gameOver) {
         playBackground();
       } else {
-        stopBackground(); 
+        stopBackground();
       }
-      return () => stopBackground(); 
+      return () => stopBackground();
     }, [gameOver, playBackground, stopBackground]);
 
     // Game loop

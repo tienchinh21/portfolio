@@ -33,10 +33,9 @@ const Footer = () => {
   return (
     <footer className="border-t px-4 py-3.5 md:px-8">
       <div className="text-foreground/70 flex flex-col items-center justify-between gap-3 text-sm md:flex-row">
-       
         <div className="inline-flex items-center gap-2">
           <Logo className="w-10" />
-          <span>© {dayjs().year()} Siddharth. All rights reserved.</span>
+          <span>© {dayjs().year()} tienchinh. All rights reserved.</span>
         </div>
 
         <motion.div
@@ -50,7 +49,6 @@ const Footer = () => {
           <span className="text-foreground/60 text-sm">in Next.js</span>
         </motion.div>
 
-     
         <div className="inline-flex items-center gap-4">
           {/* Social Links */}
           <div className="inline-flex overflow-hidden rounded-md border *:size-8 *:border-r last:*:border-r-0">
@@ -68,7 +66,6 @@ const Footer = () => {
             ))}
           </div>
 
-       
           <motion.a
             href="#home"
             whileHover={{ y: -2 }}

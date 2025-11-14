@@ -83,7 +83,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full border-b px-4 py-2.5 md:px-8" id="home">
+    <nav
+      className="bg-background/80 sticky top-0 z-50 w-full border-b px-4 py-2.5 backdrop-blur-sm md:px-8"
+      id="home"
+    >
       <div className="flex items-center justify-between gap-4">
         {/* Logo */}
         <a

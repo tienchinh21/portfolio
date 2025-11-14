@@ -2,8 +2,8 @@
 
 import { siteConfig } from "@/config/site";
 import useScreenSize from "@/hooks/use-screen-size";
-import type {  Song } from "@/types";
-import { useIsClient } from "@uidotdev/usehooks";
+import type { Song } from "@/types";
+import { useIsClient } from "usehooks-ts";
 import { Mail, Twitter, Linkedin } from "lucide-react";
 import { AnimatePresence, motion, Variants } from "motion/react";
 import { useTheme } from "next-themes";
@@ -173,7 +173,7 @@ const MainScreen: React.FC<{
           <>
             Hi! , I am{" "}
             <Typewriter
-              text={["a developer", "Siddharth", "Stark"]}
+              text={["a developer", "Nguyễn Tiến Chính", "Chính"]}
               speed={70}
               waitTime={1500}
               deleteSpeed={40}

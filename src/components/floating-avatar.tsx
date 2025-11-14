@@ -8,7 +8,7 @@ import { Eyes } from "@/components/ui/robot-eyes";
 import SpeechBubble from "@/components/ui/speech-bubble";
 import { X, Send } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { useLocalStorage } from "@uidotdev/usehooks";
+import { useLocalStorage } from "usehooks-ts";
 import dynamic from "next/dynamic";
 
 const FloatingAvatar = () => {

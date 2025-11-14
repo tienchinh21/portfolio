@@ -645,7 +645,6 @@ const InsightsContent = ({ data }: { data?: GitHubStatsResponse }) => {
 
       {/* Metrics Grid */}
       <div className="grid gap-4 md:grid-cols-2">
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -816,7 +815,7 @@ export default function Stats() {
             GitHub Statistics
           </h2>
           <p className="text-muted-foreground mt-2">
-            Tracking my open source journey
+            Kiểm tra tình trạng của tôi trên GitHub
           </p>
         </motion.div>
 
