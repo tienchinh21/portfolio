@@ -33,60 +33,24 @@ const About = () => {
               <p className="">
                 Tôi xây dựng sản phẩm nhanh chóng, thân thiện, tạo ra cảm giác
                 hạnh phúc cho người dùng
-                <span className="mx-1 inline-block align-middle">
-                  <span className="ring-offset-background relative inline-block w-12 rotate-6 overflow-hidden rounded-md ring ring-offset-2">
-                    <img
-                      src={"/gifs/kawaii%20cat%20GIF.gif"}
-                      className="h-auto w-full object-cover object-center"
-                      alt="kawaii cat cheering"
-                    />
-                  </span>
-                </span>
               </p>
 
               <p className="">
                 Công nghệ: Next.js, React, TypeScript, Tailwind. APIs sạch, giao
                 diện đẹp, độ hấp dẫn lớn
-                <span className="mx-1 inline-block align-middle">
-                  <span className="ring-offset-background relative inline-block w-12 -rotate-3 overflow-hidden rounded-md ring ring-offset-2">
-                    <img
-                      src={"/gifs/cate%20coding.gif"}
-                      className="max-h-8 w-full object-cover object-center"
-                      alt="cat intensely coding"
-                    />
-                  </span>
-                </span>
                 .
               </p>
 
               <p className="">
                 Sở thích: Mattcha Latte và Mattcha Latte.
-                <span className="mx-1 inline-block align-middle">
-                  <span className="ring-offset-background relative inline-block w-12 rotate-3 overflow-hidden rounded-md ring ring-offset-2">
-                    <img
-                      src={"/gifs/happy%20one%20piece%20GIF.gif"}
-                      className="h-auto w-full object-cover object-center"
-                      alt="happy One Piece vibe"
-                    />
-                  </span>
-                </span>
+
                 .
               </p>
 
               <p className="">
                 Tôi có kỹ năng làm việc nhóm tốt, luôn đưa nhóm và các thành
                 viên đứng đầu hướng tới những sản phẩm tốt nhất.
-                <span className="mx-1 inline-block align-middle">
-                  <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
-                    <img
-                      src={
-                        "/gifs/One%20Piece%20GIF%20by%20TOEI%20Animation%20UK.gif"
-                      }
-                      className="h-auto w-full object-cover object-center"
-                      alt="One Piece crew teamwork"
-                    />
-                  </span>
-                </span>
+
                 .
               </p>
 
@@ -94,13 +58,6 @@ const About = () => {
                 Có ý tưởng tốt, hãy liên hệ với tôi để thảo luận và xây dựng sản
                 phẩm tốt nhất.
                 <span className="mx-1 inline-block align-middle">
-                  <span className="ring-offset-background relative inline-block w-12 rotate-2 overflow-hidden rounded-md ring ring-offset-2">
-                    <img
-                      src={"/gifs/kirby%20confused.gif"}
-                      className="h-auto w-full object-cover object-center"
-                      alt="kirby confused but ready"
-                    />
-                  </span>
                 </span>
                 Hãy chuyển nó thành một sản phẩm thực tế.
               </p>

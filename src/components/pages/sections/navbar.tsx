@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { XIcon, MenuIcon, Volume2Icon, VolumeXIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggleButton2 } from "../../theme-toggle";
-import { Logo } from "../../ui/logo";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
@@ -95,7 +94,9 @@ const Navbar = () => {
           onClick={() => handleNavClick("home")}
         >
           <div className="absolute -top-2 -left-2 h-4 w-4 border-t-2 border-l-2 duration-200 group-hover:-top-1 group-hover:-left-1" />
-          <Logo className="w-14" hover />
+          <span className="font-incognito text-foreground block -rotate-6 text-4xl leading-none tracking-[-0.08em] italic">
+            Aress
+          </span>
           <div className="absolute -right-2 -bottom-2 h-4 w-4 border-r-2 border-b-2 duration-200 group-hover:-right-1 group-hover:-bottom-1" />
         </a>
 

@@ -34,8 +34,7 @@ const Footer = () => {
     <footer className="border-t px-4 py-3.5 md:px-8">
       <div className="text-foreground/70 flex flex-col items-center justify-between gap-3 text-sm md:flex-row">
         <div className="inline-flex items-center gap-2">
-          <Logo className="w-10" />
-          <span>© {dayjs().year()} tienchinh. All rights reserved.</span>
+          <span>© {dayjs().year()} Aress. All rights reserved.</span>
         </div>
 
         <motion.div

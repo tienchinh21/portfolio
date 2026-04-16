@@ -13,12 +13,12 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
-      title: "Portfolio Cá Nhân",
+      title: "CimoSchool App",
       description:
-        "Website portfolio cá nhân tôi, bao gồm các dự án, kỹ năng, và thông tin liên hệ.",
-      tags: ["Portfolio", "Fullstack", "Personal"],
-      github: "https://github.com/NotStark/portfolio",
-      image: "/projects/portfolio-screenshot.png",
+        "Một ứng dụng học trực tuyến cho trường CimoSchool, bao gồm các tính năng như đăng ký khóa học, quản lý lớp học, và tương tác với giáo viên.",
+      tags: ["Education", "Fullstack"],
+      github: "https://github.com/binner99/cimoschool-app",
+      image: "/projects/2026-03-21 11.14.49.jpg",
       live: env.NEXT_PUBLIC_APP_URL,
       date: "Tháng 10, 2025",
       status: "completed",
@@ -47,7 +47,7 @@ const Projects = () => {
   ];
 
   const tagColors = {
-    Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30",
+    Education: "bg-green-500/10 text-green-600 border-green-500/30",
     Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30",
     Personal: "bg-purple-500/10 text-purple-600 border-purple-500/30",
     Telegram: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
