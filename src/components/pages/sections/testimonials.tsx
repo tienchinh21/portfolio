@@ -269,7 +269,7 @@ export const Testimonials: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,.06)_1px,transparent_1px)] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] bg-[size:18px_18px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.06)_1px,transparent_1px)]" />
       </div>
 
-      {/* {testimonialsList.map((testimonial, index) => {
+      {testimonialsList.map((testimonial, index) => {
         const position =
           testimonialsList.length % 2
             ? index - (testimonialsList.length + 1) / 2
@@ -283,7 +283,7 @@ export const Testimonials: React.FC = () => {
             cardSize={cardSize}
           />
         );
-      })} */}
+      })}
       <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
         <button
           onClick={() => handleMove(-1)}

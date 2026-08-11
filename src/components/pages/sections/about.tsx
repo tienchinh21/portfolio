@@ -7,9 +7,24 @@ import HeadingLine from "@/components/ui/heading-line";
 
 import { Robot } from "@/components/ui/robot";
 import env from "@/config/env";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+
+const techStack = [
+  "Next.js 15",
+  "React 19",
+  "TypeScript",
+  "Tailwind CSS v4",
+  "Node.js",
+  "Prisma ORM",
+  "MySQL / Postgres",
+  "Zustand",
+  "TanStack Query",
+  "Framer Motion",
+  "Git",
+];
 
 const About = () => {
   return (
@@ -28,39 +43,37 @@ const About = () => {
             <div className="max-md:scale-x-[-1]">Xin chào!</div>
           </Robot>
 
-          <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
-            <div className="p-6">
-              <p className="">
-                Tôi xây dựng sản phẩm nhanh chóng, thân thiện, tạo ra cảm giác
-                hạnh phúc cho người dùng
-              </p>
-
-              <p className="">
-                Công nghệ: Next.js, React, TypeScript, Tailwind. APIs sạch, giao
-                diện đẹp, độ hấp dẫn lớn
-                .
-              </p>
-
-              <p className="">
-                Sở thích: Mattcha Latte và Mattcha Latte.
-
-                .
-              </p>
-
-              <p className="">
-                Tôi có kỹ năng làm việc nhóm tốt, luôn đưa nhóm và các thành
-                viên đứng đầu hướng tới những sản phẩm tốt nhất.
-
-                .
+          <div className="text-foreground/80 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
+            <div className="space-y-4 p-6">
+              <p>
+                Tôi xây dựng sản phẩm nhanh chóng, tối ưu hiệu năng và mang đến trải nghiệm người dùng ấn tượng.
               </p>
 
               <p>
-                Có ý tưởng tốt, hãy liên hệ với tôi để thảo luận và xây dựng sản
-                phẩm tốt nhất.
-                <span className="mx-1 inline-block align-middle">
-                </span>
-                Hãy chuyển nó thành một sản phẩm thực tế.
+                Công nghệ cốt lõi: <strong>Next.js, React, TypeScript, Tailwind CSS</strong>. Tôi chú trọng thiết kế APIs sạch, giao diện mượt mà và chuyển động sống động.
               </p>
+
+              <p>
+                Tôi có kỹ năng làm việc nhóm tốt, luôn chủ động học hỏi và hướng tới việc tạo ra những sản phẩm hoàn hảo nhất.
+              </p>
+
+              {/* Tech Stack Grid */}
+              <div className="pt-2">
+                <span className="text-foreground/60 mb-2 block font-mono text-xs font-semibold tracking-wider uppercase">
+                  Tech Stack & Tools:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="outline"
+                      className="bg-background/80 hover:border-primary/50 border-2 px-3 py-1 font-mono text-xs transition-colors"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="border-t-2 border-dotted p-6">
@@ -70,8 +83,12 @@ const About = () => {
                 variant={"outline"}
                 className="group border-2 font-medium"
               >
-                <a href="#contact">
-                  Liên hệ tôi
+                <a
+                  href={siteConfig.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Liên hệ tôi qua Telegram
                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </Button>
