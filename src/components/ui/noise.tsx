@@ -15,13 +15,18 @@ const Noise: React.FC<NoiseProps> = ({
   patternSize = 250,
   patternScaleX = 1,
   patternScaleY = 1,
-  patternRefreshInterval = 2,
-  patternAlpha = 15,
+  patternRefreshInterval = 12,
+  patternAlpha = 12,
   className
 }) => {
   const grainRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    // Disable heavy animated noise on mobile screens to save GPU/battery
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return;
+    }
+
     const canvas = grainRef.current;
     if (!canvas) return;
 
@@ -31,7 +36,7 @@ const Noise: React.FC<NoiseProps> = ({
     let frame = 0;
     let animationId: number;
 
-    const canvasSize = 1024;
+    const canvasSize = 512; // Reduced from 1024x1024 to 512x512 for 75% GPU memory saving
 
     const resize = () => {
       if (!canvas) return;
@@ -57,11 +62,14 @@ const Noise: React.FC<NoiseProps> = ({
       ctx.putImageData(imageData, 0, 0);
     };
 
+    // Initial draw
+    drawGrain();
+
     const loop = () => {
+      frame++;
       if (frame % patternRefreshInterval === 0) {
         drawGrain();
       }
-      frame++;
       animationId = window.requestAnimationFrame(loop);
     };
 
@@ -77,7 +85,7 @@ const Noise: React.FC<NoiseProps> = ({
 
   return (
     <canvas
-      className={cn("pointer-events-none absolute top-0 left-0 h-screen w-screen" , className)}
+      className={cn("pointer-events-none absolute top-0 left-0 h-screen w-screen hidden md:block", className)}
       ref={grainRef}
       style={{
         imageRendering: 'pixelated'

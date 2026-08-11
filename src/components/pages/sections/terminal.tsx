@@ -218,14 +218,15 @@ const TerminalSection: React.FC = () => {
 
             {/* Prompt input */}
             <form onSubmit={handleSubmit} className="flex items-center gap-2 pt-1">
-              <span className="text-emerald-400 font-bold text-xs shrink-0">aress@portfolio:~$</span>
+              <span className="text-emerald-400 font-bold text-xs shrink-0 md:inline hidden">aress@portfolio:~$</span>
+              <span className="text-emerald-400 font-bold text-xs shrink-0 md:hidden">aress:~$</span>
               <input
                 ref={inputRef}
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type 'help' or 'sudo hire'..."
-                className="flex-1 bg-transparent font-mono text-sm text-foreground outline-none border-none focus:ring-0 p-0"
+                className="flex-1 bg-transparent font-mono text-sm md:text-base text-foreground outline-none border-none focus:ring-0 p-0"
               />
               <button type="submit" aria-label="Run command" className="text-foreground/40 hover:text-foreground">
                 <CornerDownLeft className="size-3.5" />
