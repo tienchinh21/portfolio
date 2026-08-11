@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { BackgroundNoise } from "../shared/backgrounds";
 import { IntroSplash } from "../shared/intro-splash";
 import Navbar from "./sections/navbar";
@@ -12,6 +12,15 @@ import TerminalSection from "./sections/terminal";
 import { Guestbook } from "../feature/guestbook";
 
 const PortfolioPage = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <>
       <div className="no-scrollbar portfolio-container relative size-full min-h-screen">

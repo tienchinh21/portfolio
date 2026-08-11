@@ -11,18 +11,9 @@ import { useTranslation } from "@/i18n/use-translation";
 
 type NavId = "home" | "about" | "projects" | "journey" | "terminal";
 
-const getInitialNavId = (): NavId => {
-  if (typeof window !== "undefined" && window.location.hash) {
-    const hash = window.location.hash.replace("#", "") as NavId;
-    const validIds: NavId[] = ["home", "about", "projects", "journey", "terminal"];
-    if (validIds.includes(hash)) return hash;
-  }
-  return "home";
-};
-
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<NavId>(getInitialNavId);
+  const [active, setActive] = useState<NavId>("home");
   const { resolvedTheme, setTheme } = useTheme();
   const { t, lang, toggleLang } = useTranslation();
 
@@ -56,6 +47,11 @@ const Navbar = () => {
 
     const updateActiveTab = () => {
       if (isManualScrolling.current) return;
+
+      if (typeof window !== "undefined" && window.scrollY < 100) {
+        setActive("home");
+        return;
+      }
 
       // 1. Check window.location.hash if present
       const hash = typeof window !== "undefined" ? (window.location.hash.replace("#", "") as NavId) : "";
