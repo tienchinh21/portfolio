@@ -4,6 +4,7 @@ import Profile from "@/components/profile";
 import { Button } from "@/components/ui/button";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Typewriter } from "@/components/ui/typewriter";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
@@ -97,7 +98,11 @@ const Hero = () => {
                 size="lg"
                 className="group/btn border-2 font-medium"
               >
-                <a href={"#contact"}>
+                <a
+                  href={siteConfig.telegram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Cho phép kết nối
                   <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
