@@ -61,7 +61,10 @@ const milestones: Milestone[] = [
   },
 ];
 
+import { useTranslation } from "@/i18n/use-translation";
+
 const TimelineSection: React.FC = () => {
+  const { t } = useTranslation();
   const [expandedId, setExpandedId] = useState<string | null>("m1");
 
   const toggleExpand = (id: string) => {
@@ -88,7 +91,7 @@ const TimelineSection: React.FC = () => {
 
           <div className="flex items-center gap-1.5 shrink-0 pt-1">
             <span className="text-xs font-mono text-muted-foreground hidden sm:inline">
-              {isExpanded ? "Collapse" : "Details"}
+              {isExpanded ? t.journey.collapse : t.journey.details}
             </span>
             <ChevronDown
               className={cn("size-4 transition-transform duration-300 text-muted-foreground", {
@@ -143,17 +146,17 @@ const TimelineSection: React.FC = () => {
   };
 
   return (
-    <SectionHeading text="Career Journey" id="journey">
+    <SectionHeading text={t.journey.sectionTitle} id="journey">
       <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16 max-w-5xl mx-auto">
         <div className="mb-14 text-center max-w-xl mx-auto">
           <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold inline-flex items-center gap-1.5 mb-2">
-            <Rocket className="size-3.5" /> Milestones & Growth
+            <Rocket className="size-3.5" /> {t.journey.tagline}
           </span>
           <h3 className="font-incognito text-2xl font-bold md:text-4xl">
-            Hành trình phát triển & Kinh nghiệm
+            {t.journey.title}
           </h3>
           <p className="text-muted-foreground mt-2 text-sm md:text-base">
-            Quá trình học hỏi, rèn luyện và các cột mốc thực hiện dự án thực tế.
+            {t.journey.subtitle}
           </p>
         </div>
 

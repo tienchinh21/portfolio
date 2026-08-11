@@ -5,60 +5,59 @@ import SectionHeading from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Layout, Server, Cpu, CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
-
-const services = [
-  {
-    icon: Layout,
-    title: "Front-End Development",
-    description:
-      "Xây dựng giao diện web mượt mà, phản hồi nhanh (Responsive), tối ưu SEO và trải nghiệm người dùng với Next.js 15, React 19 và Tailwind CSS v4.",
-    highlights: ["Next.js App Router", "Framer Motion Animations", "Responsive & Accessibility"],
-    badge: "Primary Focus",
-  },
-  {
-    icon: Server,
-    title: "Backend & Database",
-    description:
-      "Thiết kế RESTful APIs sạch, tích hợp cơ sở dữ liệu (PostgreSQL / MySQL) thông qua Prisma ORM và quản lý phiên đăng nhập bảo mật.",
-    highlights: ["Prisma ORM & SQL", "Better Auth & Session", "Serverless API Routes"],
-    badge: "Core Service",
-  },
-  {
-    icon: Cpu,
-    title: "Automation & Telegram Bots",
-    description:
-      "Phát triển các hệ thống tự động hóa công việc, bot quản lý nhóm Telegram và hệ thống gửi thông báo thời gian thực.",
-    highlights: ["Telegram Bot API", "Node.js & TypeScript", "Real-time Workflows"],
-    badge: "Specialized",
-  },
-  {
-    icon: Code2,
-    title: "Clean Code & Performance",
-    description:
-      "Viết mã nguồn chuẩn TypeScript type-safe, cấu trúc dự án rõ ràng, tối ưu hóa tốc độ tải trang và chỉ số Core Web Vitals.",
-    highlights: ["TypeScript 5 Strict", "State Management (Zustand)", "Performance Optimization"],
-    badge: "Quality First",
-  },
-];
+import { useTranslation } from "@/i18n/use-translation";
 
 const Services: React.FC = () => {
+  const { t } = useTranslation();
+
+  const servicesList = [
+    {
+      icon: Layout,
+      title: t.services.frontendTitle,
+      description: t.services.frontendDesc,
+      highlights: ["Next.js App Router", "Framer Motion Animations", "Responsive & Accessibility"],
+      badge: "Primary Focus",
+    },
+    {
+      icon: Server,
+      title: t.services.backendTitle,
+      description: t.services.backendDesc,
+      highlights: ["Prisma ORM & SQL", "Better Auth & Session", "Serverless API Routes"],
+      badge: "Core Service",
+    },
+    {
+      icon: Cpu,
+      title: t.services.automationTitle,
+      description: t.services.automationDesc,
+      highlights: ["Telegram Bot API", "Node.js & TypeScript", "Real-time Workflows"],
+      badge: "Specialized",
+    },
+    {
+      icon: Code2,
+      title: t.services.cleanCodeTitle,
+      description: t.services.cleanCodeDesc,
+      highlights: ["TypeScript 5 Strict", "State Management (Zustand)", "Performance Optimization"],
+      badge: "Quality First",
+    },
+  ];
+
   return (
-    <SectionHeading text="Services & Capabilities" id="services">
+    <SectionHeading text={t.services.sectionTitle} id="services">
       <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16">
         <div className="mb-10 max-w-2xl">
           <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold flex items-center gap-1.5 mb-2">
-            <Sparkles className="size-3.5" /> What I Bring To The Table
+            <Sparkles className="size-3.5" /> {t.services.tagline}
           </span>
           <h3 className="font-incognito text-2xl font-bold md:text-4xl">
-            Thế mạnh & Dịch vụ phát triển
+            {t.services.title}
           </h3>
           <p className="text-muted-foreground mt-3 text-sm md:text-base leading-relaxed">
-            Tôi tập trung vào việc biến các ý tưởng phức tạp thành ứng dụng web hoàn chỉnh, có hiệu năng cao và giao diện đẹp mắt.
+            {t.services.subtitle}
           </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {services.map((service, index) => {
+          {servicesList.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div

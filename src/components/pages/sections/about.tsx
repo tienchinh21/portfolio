@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
+import { useTranslation } from "@/i18n/use-translation";
+
 const techStack = [
   "Next.js 15",
   "React 19",
@@ -27,40 +29,34 @@ const techStack = [
 ];
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
-    <SectionHeading text="About" id="about" className="overflow-hidden">
+    <SectionHeading text={t.about.sectionTitle} id="about" className="overflow-hidden">
       <div className="flex items-center lg:h-[95vh]">
         <div className="relative flex-1 px-4 pt-14 pb-12 md:px-12 md:pt-16">
-          <h2 className="font-incognito text-2xl font-semibold md:text-5xl lg:text-4xl">
-            Meet the Developer,
-            <br />
-            Not Just the Code
+          <h2 className="font-incognito text-2xl font-semibold md:text-5xl lg:text-4xl whitespace-pre-line">
+            {t.about.heading}
           </h2>
 
           <HeadingLine className="mt-6" lineWidth={40} />
 
           <Robot className="absolute top-6 -right-8 z-5 w-64 font-mono text-white max-md:scale-x-[-1] md:top-8 md:right-4">
-            <div className="max-md:scale-x-[-1]">Xin chào!</div>
+            <div className="max-md:scale-x-[-1]">{t.about.greetingRobot}</div>
           </Robot>
 
           <div className="text-foreground/80 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
             <div className="space-y-4 p-6">
-              <p>
-                Tôi xây dựng sản phẩm nhanh chóng, tối ưu hiệu năng và mang đến trải nghiệm người dùng ấn tượng.
-              </p>
+              <p>{t.about.bioP1}</p>
 
-              <p>
-                Công nghệ cốt lõi: <strong>Next.js, React, TypeScript, Tailwind CSS</strong>. Tôi chú trọng thiết kế APIs sạch, giao diện mượt mà và chuyển động sống động.
-              </p>
+              <p>{t.about.bioP2}</p>
 
-              <p>
-                Tôi có kỹ năng làm việc nhóm tốt, luôn chủ động học hỏi và hướng tới việc tạo ra những sản phẩm hoàn hảo nhất.
-              </p>
+              <p>{t.about.bioP3}</p>
 
               {/* Tech Stack Grid */}
               <div className="pt-2">
                 <span className="text-foreground/60 mb-2 block font-mono text-xs font-semibold tracking-wider uppercase">
-                  Tech Stack & Tools:
+                  {t.about.techStackLabel}
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {techStack.map((tech) => (
@@ -88,7 +84,7 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Liên hệ tôi qua Telegram
+                  {t.about.contactTelegram}
                   <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </Button>
@@ -148,10 +144,10 @@ const About = () => {
                         )}
                       />
                       {!env.NEXT_PUBLIC_AVAILABLE_STATUS
-                        ? "Not Available"
-                        : "Available"}
+                        ? t.about.notAvailable
+                        : t.about.available}
                     </Badge>
-                    <Badge variant="outline">1+ Years</Badge>
+                    <Badge variant="outline">{t.about.yearsBadge}</Badge>
                     <Badge variant="outline">Front-End Developer</Badge>
                   </div>
                 </div>

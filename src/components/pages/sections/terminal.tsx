@@ -6,6 +6,7 @@ import { siteConfig } from "@/config/site";
 import confetti from "canvas-confetti";
 import { Terminal as TerminalIcon, CornerDownLeft, Sparkles, ShieldAlert } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "@/i18n/use-translation";
 
 interface CommandLog {
   command: string;
@@ -23,6 +24,7 @@ const COMMAND_SUGGESTIONS = [
 ];
 
 const TerminalSection: React.FC = () => {
+  const { t } = useTranslation();
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<CommandLog[]>([
     {
@@ -176,7 +178,7 @@ const TerminalSection: React.FC = () => {
   };
 
   return (
-    <SectionHeading text="Developer Terminal" id="terminal">
+    <SectionHeading text={t.terminal.sectionTitle} id="terminal">
       <div className="pt-14 p-4 md:pt-16 md:p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

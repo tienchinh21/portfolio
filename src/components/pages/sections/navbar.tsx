@@ -8,29 +8,31 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { useIsSoundEnabled } from "@/store/use-sound-enabled";
+import { useTranslation } from "@/i18n/use-translation";
 
-const NAV_LINKS = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "journey", label: "Journey" },
-  { id: "terminal", label: "Terminal" },
-] as const;
-
-type NavId = (typeof NAV_LINKS)[number]["id"];
+type NavId = "home" | "about" | "projects" | "journey" | "terminal";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<NavId>("home");
   const { isSoundEnabled, toggleSoundEnabled } = useIsSoundEnabled();
   const { resolvedTheme, setTheme } = useTheme();
+  const { t, lang, toggleLang } = useTranslation();
+
+  const navLinks: { id: NavId; label: string }[] = [
+    { id: "home", label: t.nav.home },
+    { id: "about", label: t.nav.about },
+    { id: "projects", label: t.nav.projects },
+    { id: "journey", label: t.nav.journey },
+    { id: "terminal", label: t.nav.terminal },
+  ];
 
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const activeTabRef = useRef<HTMLAnchorElement | null>(null);
 
   // Update active tab from URL hash
   useEffect(() => {
-    const ids = NAV_LINKS.map((x) => x.id);
+    const ids = navLinks.map((x) => x.id);
     const setFromHash = () => {
       const hash =
         (typeof window !== "undefined" && window.location.hash) || "";
@@ -40,7 +42,7 @@ const Navbar = () => {
     setFromHash();
     window.addEventListener("hashchange", setFromHash);
     return () => window.removeEventListener("hashchange", setFromHash);
-  }, []);
+  }, [lang]);
 
   // Compute clip-path for animated tabs highlight
   const updateClip = () => {
@@ -112,7 +114,7 @@ const Navbar = () => {
             className="pointer-events-none absolute inset-1.5 z-10 w-full overflow-hidden rounded-full [clip-path:inset(0px_75%_0px_0%_round_17px)] [transition:clip-path_0.25s_ease]"
           >
             <div className="bg-foreground/10 relative flex gap-1 rounded-full border px-2 py-1">
-              {NAV_LINKS.map((x) => (
+              {navLinks.map((x) => (
                 <div
                   key={x.id}
                   className="text-foreground flex items-center rounded-full px-4 py-1.5 text-sm font-medium opacity-0"
@@ -125,7 +127,7 @@ const Navbar = () => {
 
           {/* Clickable layer */}
           <div className="relative z-20 flex items-center gap-1 rounded-full border px-4 py-1.5">
-            {NAV_LINKS.map((x) => {
+            {navLinks.map((x) => {
               const isActive = x.id === active;
               return (
                 <a
@@ -191,6 +193,17 @@ const Navbar = () => {
             >
               <ThemeToggleButton2 className="size-5" theme={resolvedTheme} />
             </button>
+
+            <div className="bg-border h-4 w-px" />
+
+            {/* Language Switcher */}
+            <button
+              onClick={() => toggleLang()}
+              className="font-mono text-xs font-bold text-foreground/70 hover:text-foreground transition-all duration-200 hover:scale-105 px-1 py-0.5 rounded border border-foreground/10"
+              aria-label="Switch language"
+            >
+              {lang === "vi" ? "VI" : "EN"}
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -242,7 +255,7 @@ const Navbar = () => {
               exit={{ y: -20 }}
               className="bg-background/50 mt-2 grid gap-1 rounded-xl border p-2 backdrop-blur-sm"
             >
-              {NAV_LINKS.map((x, index) => (
+              {navLinks.map((x, index) => (
                 <motion.a
                   key={x.id}
                   href={`#${x.id}`}

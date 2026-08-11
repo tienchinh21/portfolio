@@ -5,12 +5,15 @@ import { Button } from "@/components/ui/button";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Typewriter } from "@/components/ui/typewriter";
 import { siteConfig } from "@/config/site";
+import { useTranslation } from "@/i18n/use-translation";
 import { cn } from "@/lib/utils";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <div id="home" className="relative flex flex-col justify-center overflow-hidden border-b pt-12 scroll-mt-16">
       <div className="px-4 pb-6 md:px-8 md:pb-14 lg:px-20">
@@ -48,12 +51,12 @@ const Hero = () => {
             >
               <div className="bg-background border px-3 py-1">
                 <span className="text-foreground/60 font-mono text-xs">
-                  {"<"} Hello World {"/>"}
+                  {t.hero.helloWorld}
                 </span>
               </div>
               <div className="h-px w-12 bg-[#e1e1e1]" />
               <span className="text-foreground/50 font-mono text-xs md:text-sm">
-                Front-End Developer
+                {t.hero.role}
               </span>
             </motion.div>
 
@@ -64,10 +67,10 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="font-incognito mb-4 text-3xl leading-tight font-semibold md:text-4xl lg:text-6xl"
             >
-              <span className="text-foreground">Xin chào, Tôi là </span>
+              <span className="text-foreground">{t.hero.greeting}</span>
               <span className="relative text-[#8cc2ff] italic">
                 <Typewriter
-                  text={["Nguyễn Tiến Chính", "Chính"]}
+                  text={t.hero.nameText}
                   speed={85}
                   waitTime={1500}
                   deleteSpeed={40}
@@ -83,8 +86,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-foreground/60 max-w-2xl text-sm font-light md:text-base"
             >
-              Front-End developer với đam mê đam mê xây dựng ứng dụng web. Tôi
-              chuyên về React, Next.js, Node.js và TypeScript.
+              {t.hero.bio}
             </motion.p>
 
             <motion.div
@@ -103,7 +105,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Cho phép kết nối
+                  {t.hero.connectBtn}
                   <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                 </a>
               </Button>
@@ -115,7 +117,7 @@ const Hero = () => {
               >
                 <Link href={"/resume.pdf"}>
                   <Download className="size-4 transition-transform group-hover/btn:translate-y-0.5" />
-                  Tải sơ yếu lý lịch xuống
+                  {t.hero.resumeBtn}
                 </Link>
               </Button>
             </motion.div>
@@ -127,9 +129,9 @@ const Hero = () => {
       <div className="relative">
         <div className="grid grid-cols-1 border sm:grid-cols-3 md:max-w-3/4 md:border-0 md:border-t md:border-r">
           {[
-            { label: "Years of Experience", value: 1 },
-            { label: "Projects Shipped", value: 8 },
-            { label: "Happy Clients", value: 5 },
+            { label: t.hero.stats.exp, value: 1 },
+            { label: t.hero.stats.projects, value: 8 },
+            { label: t.hero.stats.clients, value: 5 },
           ].map((stat, i) => (
             <div
               key={i}
@@ -149,7 +151,7 @@ const Hero = () => {
         </div>
 
         <div className="text-muted-foreground absolute right-4 bottom-2 hidden items-center justify-center gap-1 font-mono text-xs md:inline-flex">
-          KÉO XUỐNG
+          {t.hero.scrollDown}
           <ArrowDownSquareIcon className="size-4 animate-pulse" />
         </div>
       </div>
