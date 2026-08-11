@@ -25,7 +25,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      <div className="no-scrollbar portfolio-container relative size-full min-h-screen">
+      <div className="no-scrollbar portfolio-container relative size-full min-h-screen max-w-full overflow-x-hidden">
         <BackgroundNoise className="z-50" />
 
         <div className="h-screen">

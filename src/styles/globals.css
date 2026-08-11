@@ -179,7 +179,7 @@
   }
   html,
   body {
-    @apply size-full;
+    @apply size-full max-w-full overflow-x-hidden;
   }
   body {
     @apply bg-background text-foreground;

@@ -44,7 +44,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "mx-auto font-sans antialiased",
+          "mx-auto font-sans antialiased max-w-full overflow-x-hidden",
           geistSans.variable,
           geistMono.variable,
           incognito.variable,
