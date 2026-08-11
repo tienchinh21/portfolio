@@ -7,7 +7,7 @@ import Projects from "./sections/projects";
 import About from "./sections/about";
 import Footer from "./sections/footer";
 import Stats from "./sections/stats";
-import { Testimonials } from "./sections/testimonials";
+import Services from "./sections/services";
 import { Guestbook } from "../feature/guestbook";
 
 const PortfolioPage = () => {
@@ -32,7 +32,7 @@ const PortfolioPage = () => {
               <Projects />
               <About />
               <Stats />
-              <Testimonials />
+              <Services />
               <Footer />
             </div>
           </div>
