@@ -1,13 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { XIcon, MenuIcon, Volume2Icon, VolumeXIcon } from "lucide-react";
+import { XIcon, MenuIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggleButton2 } from "../../theme-toggle";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteConfig } from "@/config/site";
-import { useIsSoundEnabled } from "@/store/use-sound-enabled";
 import { useTranslation } from "@/i18n/use-translation";
 
 type NavId = "home" | "about" | "projects" | "journey" | "terminal";
@@ -24,7 +23,6 @@ const getInitialNavId = (): NavId => {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState<NavId>(getInitialNavId);
-  const { isSoundEnabled, toggleSoundEnabled } = useIsSoundEnabled();
   const { resolvedTheme, setTheme } = useTheme();
   const { t, lang, toggleLang } = useTranslation();
 
@@ -237,21 +235,6 @@ const Navbar = () => {
 
             <div className="bg-border h-4 w-px" />
 
-            {/* Sound Toggle */}
-            <button
-              onClick={() => toggleSoundEnabled()}
-              className="text-foreground/60 hover:text-foreground transition-all duration-200 hover:scale-110"
-              aria-label={isSoundEnabled ? "Mute sounds" : "Enable sounds"}
-            >
-              {isSoundEnabled ? (
-                <Volume2Icon className="size-5" />
-              ) : (
-                <VolumeXIcon className="size-5" />
-              )}
-            </button>
-
-            <div className="bg-border h-4 w-px" />
-
             {/* Theme Toggle */}
             <button
               onClick={() =>
@@ -373,7 +356,7 @@ const Navbar = () => {
 
               <div className="grid grid-cols-3 gap-2 px-2 py-1">
                 <a
-                  href="https://github.com/"
+                  href={siteConfig.github}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
@@ -393,20 +376,6 @@ const Navbar = () => {
                 </a>
 
                 <button
-                  onClick={() => toggleSoundEnabled()}
-                  className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
-                >
-                  {isSoundEnabled ? (
-                    <Volume2Icon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
-                  ) : (
-                    <VolumeXIcon className="text-foreground/60 group-hover:text-foreground size-5 transition-colors" />
-                  )}
-                  <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
-                    {isSoundEnabled ? "Sound" : "Muted"}
-                  </span>
-                </button>
-
-                <button
                   onClick={() =>
                     setTheme(resolvedTheme === "dark" ? "light" : "dark")
                   }
@@ -418,6 +387,18 @@ const Navbar = () => {
                   />
                   <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
                     Theme
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => toggleLang()}
+                  className="hover:bg-foreground/5 group flex flex-col items-center gap-1.5 rounded-lg py-2 transition-colors"
+                >
+                  <span className="text-xs font-mono font-bold text-foreground/80 border border-foreground/20 px-1.5 py-0.5 rounded">
+                    {lang === "vi" ? "VI" : "EN"}
+                  </span>
+                  <span className="text-foreground/60 group-hover:text-foreground text-[10px] font-medium">
+                    Language
                   </span>
                 </button>
               </div>

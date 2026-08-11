@@ -41,7 +41,7 @@ const About = () => {
 
           <HeadingLine className="mt-6" lineWidth={40} />
 
-          <Robot className="absolute top-6 -right-8 z-5 w-64 font-mono text-white max-md:scale-x-[-1] md:top-8 md:right-4">
+          <Robot className="absolute top-6 -right-8 z-5 w-64 font-mono text-white max-sm:hidden max-md:scale-x-[-1] md:top-8 md:right-4">
             <div className="max-md:scale-x-[-1]">{t.about.greetingRobot}</div>
           </Robot>
 
