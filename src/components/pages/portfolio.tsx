@@ -8,6 +8,8 @@ import About from "./sections/about";
 import Footer from "./sections/footer";
 import Stats from "./sections/stats";
 import Services from "./sections/services";
+import TimelineSection from "./sections/timeline";
+import TerminalSection from "./sections/terminal";
 import { Guestbook } from "../feature/guestbook";
 
 const PortfolioPage = () => {
@@ -33,6 +35,8 @@ const PortfolioPage = () => {
               <About />
               <Stats />
               <Services />
+              <TimelineSection />
+              <TerminalSection />
               <Footer />
             </div>
           </div>
