@@ -13,7 +13,8 @@ const NAV_LINKS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
-  { id: "stats", label: "Stats" },
+  { id: "journey", label: "Journey" },
+  { id: "terminal", label: "Terminal" },
 ] as const;
 
 type NavId = (typeof NAV_LINKS)[number]["id"];

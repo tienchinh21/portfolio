@@ -6,7 +6,6 @@ import Hero from "./sections/hero";
 import Projects from "./sections/projects";
 import About from "./sections/about";
 import Footer from "./sections/footer";
-import Stats from "./sections/stats";
 import Services from "./sections/services";
 import TimelineSection from "./sections/timeline";
 import TerminalSection from "./sections/terminal";
@@ -33,7 +32,6 @@ const PortfolioPage = () => {
               <Hero />
               <Projects />
               <About />
-              <Stats />
               <Services />
               <TimelineSection />
               <TerminalSection />
