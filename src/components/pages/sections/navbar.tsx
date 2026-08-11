@@ -12,9 +12,18 @@ import { useTranslation } from "@/i18n/use-translation";
 
 type NavId = "home" | "about" | "projects" | "journey" | "terminal";
 
+const getInitialNavId = (): NavId => {
+  if (typeof window !== "undefined" && window.location.hash) {
+    const hash = window.location.hash.replace("#", "") as NavId;
+    const validIds: NavId[] = ["home", "about", "projects", "journey", "terminal"];
+    if (validIds.includes(hash)) return hash;
+  }
+  return "home";
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<NavId>("home");
+  const [active, setActive] = useState<NavId>(getInitialNavId);
   const { isSoundEnabled, toggleSoundEnabled } = useIsSoundEnabled();
   const { resolvedTheme, setTheme } = useTheme();
   const { t, lang, toggleLang } = useTranslation();
@@ -32,37 +41,53 @@ const Navbar = () => {
 
   const isManualScrolling = useRef(false);
 
-  // ScrollSpy IntersectionObserver to sync active tab on scroll & reload
+  // Sync active tab on mount, scroll, hash change & page reload
   useEffect(() => {
     const ids: NavId[] = ["home", "about", "projects", "journey", "terminal"];
 
-    const observerCallback: IntersectionObserverCallback = (entries) => {
+    const updateActiveTab = () => {
       if (isManualScrolling.current) return;
 
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id as NavId;
-          if (ids.includes(id)) {
-            setActive(id);
+      // 1. Check window.location.hash if present
+      const hash = typeof window !== "undefined" ? (window.location.hash.replace("#", "") as NavId) : "";
+      if (hash && ids.includes(hash)) {
+        const hashEl = document.getElementById(hash);
+        if (hashEl) {
+          const rect = hashEl.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.6 && rect.bottom >= 0) {
+            setActive(hash);
+            return;
           }
         }
-      });
+      }
+
+      // 2. Fallback to section position in viewport
+      let currentSection: NavId = "home";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.45 && rect.bottom >= 100) {
+            currentSection = id;
+          }
+        }
+      }
+      setActive(currentSection);
     };
 
-    const observerOptions: IntersectionObserverInit = {
-      root: null,
-      rootMargin: "-20% 0px -40% 0px",
-      threshold: 0.15,
+    updateActiveTab();
+    const timer1 = setTimeout(updateActiveTab, 100);
+    const timer2 = setTimeout(updateActiveTab, 400);
+
+    window.addEventListener("scroll", updateActiveTab, { passive: true });
+    window.addEventListener("hashchange", updateActiveTab);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      window.removeEventListener("scroll", updateActiveTab);
+      window.removeEventListener("hashchange", updateActiveTab);
     };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
   }, [lang]);
 
   // Compute clip-path for animated tabs highlight
@@ -74,11 +99,9 @@ const Navbar = () => {
     const cRect = container.getBoundingClientRect();
     const tRect = target.getBoundingClientRect();
 
-    // Position of the active tab relative to the overlay container
     let left = tRect.left - cRect.left;
     let right = cRect.right - tRect.right;
 
-    // Small padding so the highlight looks cushioned
     const pad = 6;
     left = Math.max(0, left - pad);
     right = Math.max(0, right - pad);
@@ -90,7 +113,6 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    // Update after layout settles
     const id = requestAnimationFrame(updateClip);
     window.addEventListener("resize", updateClip);
     return () => {
@@ -106,6 +128,10 @@ const Navbar = () => {
     setActive(id);
     setOpen(false);
     isManualScrolling.current = true;
+
+    if (typeof window !== "undefined") {
+      window.history.pushState(null, "", `#${id}`);
+    }
 
     const element = document.getElementById(id);
     if (element) {
