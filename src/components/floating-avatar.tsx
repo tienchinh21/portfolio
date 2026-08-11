@@ -20,7 +20,7 @@ const FloatingAvatar = () => {
   );
 
   useEffect(() => {
-    if (!pathname.startsWith("/portfolio")) {
+    if (!pathname.startsWith("/portfolio") && pathname !== "/") {
       setIsVisible(false);
       return;
     }

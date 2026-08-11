@@ -7,22 +7,6 @@ export type Song = {
 
 
 
-export type UmamiStats = {
-
-    pageviews: number;
-    visitors: number;
-    visits: number;
-    bounces: number;
-    totaltime: number; // total time in seconds
-    comparison: {
-      pageviews: number;
-      visitors: number;
-      visits: number;
-      bounces: number;
-      totaltime: number;
-    };
-  };
-
 
   export type GuestbookEntry = {
     id: string;

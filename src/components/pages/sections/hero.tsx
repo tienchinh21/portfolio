@@ -4,21 +4,14 @@ import Profile from "@/components/profile";
 import { Button } from "@/components/ui/button";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Typewriter } from "@/components/ui/typewriter";
-import { clientApi } from "@/lib/client-api";
 import { cn } from "@/lib/utils";
-import { useQuery } from "@tanstack/react-query";
 import { ArrowDownSquareIcon, ArrowUpRight, Download } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 
 const Hero = () => {
-  const { data: umamiStats } = useQuery({
-    queryKey: ["pageViews"],
-    queryFn: clientApi.views.getStats,
-  });
-
   return (
-    <div className="relative flex flex-col justify-center overflow-hidden border-b pt-12">
+    <div id="home" className="relative flex flex-col justify-center overflow-hidden border-b pt-12 scroll-mt-16">
       <div className="px-4 pb-6 md:px-8 md:pb-14 lg:px-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -127,12 +120,8 @@ const Hero = () => {
 
       {/*  Stats Grid */}
       <div className="relative">
-        <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
+        <div className="grid grid-cols-1 border sm:grid-cols-3 md:max-w-3/4 md:border-0 md:border-t md:border-r">
           {[
-            {
-              label: "Portfolio views",
-              value: umamiStats?.data?.pageviews ?? 0,
-            },
             { label: "Years of Experience", value: 1 },
             { label: "Projects Shipped", value: 8 },
             { label: "Happy Clients", value: 5 },
@@ -141,8 +130,7 @@ const Hero = () => {
               key={i}
               className={cn(
                 "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
-                i !== 3 && "border-r",
-                i < 2 && "border-b lg:border-b-0",
+                i !== 2 && "border-b sm:border-b-0 sm:border-r",
               )}
             >
               <div className="text-foreground mb-2 text-3xl font-bold">

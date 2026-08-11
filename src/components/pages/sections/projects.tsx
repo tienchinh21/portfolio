@@ -27,7 +27,7 @@ const Projects = () => {
     //   title: "Telegram Bot",
     //   description: "A telegram group management bot built with Pyrogram.",
     //   tags: ["Bot", "Management", "Telegram"],
-    //   github: "https://github.com/Notstark/TelegramBot",
+    //   github: "https://github.com/Ares/TelegramBot",
     //   image: "/projects/telegrambot-screenshot.png",
     //   live: "https://t.me/HyugaGuardianBot",
     //   date: "Oct, 2024",

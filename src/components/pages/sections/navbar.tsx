@@ -76,22 +76,26 @@ const Navbar = () => {
     };
   }, [active]);
 
-  const handleNavClick = (id: NavId) => {
+  const handleNavClick = (id: NavId, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
     setActive(id);
     setOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <nav
-      className="bg-background/80 sticky top-0 z-50 w-full border-b px-4 py-2.5 backdrop-blur-sm md:px-8"
-      id="home"
-    >
+    <nav className="bg-background/80 sticky top-0 z-50 w-full border-b px-4 py-2.5 backdrop-blur-sm md:px-8">
       <div className="flex items-center justify-between gap-4">
         {/* Logo */}
         <a
           href="#home"
           className="group relative inline-flex items-center"
-          onClick={() => handleNavClick("home")}
+          onClick={(e) => handleNavClick("home", e)}
         >
           <div className="absolute -top-2 -left-2 h-4 w-4 border-t-2 border-l-2 duration-200 group-hover:-top-1 group-hover:-left-1" />
           <span className="font-incognito text-foreground block -rotate-6 text-4xl leading-none tracking-[-0.08em] italic">
@@ -128,7 +132,7 @@ const Navbar = () => {
                   key={x.id}
                   ref={isActive ? activeTabRef : null}
                   href={`#${x.id}`}
-                  onClick={() => handleNavClick(x.id)}
+                  onClick={(e) => handleNavClick(x.id, e)}
                   className={cn(
                     "relative rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200",
                     isActive ? "" : "opacity-70 hover:opacity-100",
@@ -242,7 +246,7 @@ const Navbar = () => {
                 <motion.a
                   key={x.id}
                   href={`#${x.id}`}
-                  onClick={() => handleNavClick(x.id)}
+                  onClick={(e) => handleNavClick(x.id, e)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}

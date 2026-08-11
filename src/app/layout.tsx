@@ -3,12 +3,9 @@ import "@/styles/globals.css";
 import Providers from "@/components/providers";
 import { geistMono, geistSans, incognito, pixelifySans } from "@/assets/fonts";
 import { cn } from "@/lib/utils";
-import MotionConfigWrapper from "@/components/motion-config";
 import { siteConfig } from "@/config/site";
-import Script from "next/script";
-import env from "@/config/env";
+import MotionConfigWrapper from "@/components/motion-config";
 import FloatingAvatar from "@/components/floating-avatar";
-// import FloatingAvatar from "@/components/floating-avatar";
 
 
 export const metadata: Metadata = {
@@ -27,7 +24,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.png",
-        alt: "Stark's Portfolio",
+        alt: "Ares's Portfolio",
       },
     ],
   },
@@ -58,12 +55,6 @@ export default function RootLayout({
             {children}
           </MotionConfigWrapper>
         </Providers>
-
-        <Script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-        />
       </body>
     </html>
   );

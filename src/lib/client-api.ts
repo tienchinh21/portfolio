@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { GitHubStatsResponse } from "@/types/github";
 import type { Todo } from "@prisma/client";
-import { ApiResponse, GuestbookEntry, UmamiStats } from "@/types";
+import { ApiResponse, GuestbookEntry } from "@/types";
 import type { GuestbookEntry as RawGuestbookEntry } from "@prisma/client";
 
 
@@ -73,18 +73,8 @@ export const todoApi = {
 };
 
 
-export const viewsApi = {
-    getStats: async () => {
-        const res = await api.get<ApiResponse<UmamiStats>>("/views");
-        return res.data;
-    },
-};
-
-
 export const clientApi = {
     github: githubApi,
     guestbook: guestbookApi,
     todo: todoApi,
-    views: viewsApi,
-
 };
