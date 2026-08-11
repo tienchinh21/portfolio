@@ -44,7 +44,7 @@ const services = [
 const Services: React.FC = () => {
   return (
     <SectionHeading text="Services & Capabilities" id="services">
-      <div className="p-6 md:p-12 lg:p-16">
+      <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16">
         <div className="mb-10 max-w-2xl">
           <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold flex items-center gap-1.5 mb-2">
             <Sparkles className="size-3.5" /> What I Bring To The Table

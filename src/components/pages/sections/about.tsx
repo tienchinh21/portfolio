@@ -30,7 +30,7 @@ const About = () => {
   return (
     <SectionHeading text="About" id="about" className="overflow-hidden">
       <div className="flex items-center lg:h-[95vh]">
-        <div className="relative flex-1 px-4 py-12 md:px-12">
+        <div className="relative flex-1 px-4 pt-14 pb-12 md:px-12 md:pt-16">
           <h2 className="font-incognito text-2xl font-semibold md:text-5xl lg:text-4xl">
             Meet the Developer,
             <br />

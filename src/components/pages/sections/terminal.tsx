@@ -177,7 +177,7 @@ const TerminalSection: React.FC = () => {
 
   return (
     <SectionHeading text="Developer Terminal" id="terminal">
-      <div className="p-4 md:p-10">
+      <div className="pt-14 p-4 md:pt-16 md:p-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -144,7 +144,7 @@ const TimelineSection: React.FC = () => {
 
   return (
     <SectionHeading text="Career Journey" id="journey">
-      <div className="p-6 md:p-12 lg:p-16 max-w-5xl mx-auto">
+      <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16 max-w-5xl mx-auto">
         <div className="mb-14 text-center max-w-xl mx-auto">
           <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold inline-flex items-center gap-1.5 mb-2">
             <Rocket className="size-3.5" /> Milestones & Growth
