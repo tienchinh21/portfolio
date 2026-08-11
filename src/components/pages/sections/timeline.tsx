@@ -124,8 +124,8 @@ const TimelineSection: React.FC = () => {
                   {/* Card Content Side */}
                   <div
                     className={cn(
-                      "w-full md:w-1/2 pl-12 md:pl-0",
-                      isEven ? "md:pr-10" : "md:pl-10"
+                      "w-full md:w-1/2 pl-16 md:pl-0",
+                      isEven ? "md:pr-14 md:pl-0" : "md:pl-14 md:pr-0"
                     )}
                   >
                     <div className="bg-muted/20 border-2 border-dashed rounded-xl p-5 md:p-6 transition-all hover:border-primary/40">
