@@ -6,7 +6,9 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import MotionConfigWrapper from "@/components/motion-config";
 import FloatingAvatar from "@/components/floating-avatar";
-
+import SmoothScrollProvider from "@/components/smooth-scroll-provider";
+import ScrollProgress from "@/components/ui/scroll-progress";
+import BackToTop from "@/components/ui/back-to-top";
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -50,10 +52,14 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <MotionConfigWrapper>
-            <FloatingAvatar />
-            {children}
-          </MotionConfigWrapper>
+          <SmoothScrollProvider>
+            <MotionConfigWrapper>
+              <ScrollProgress />
+              <BackToTop />
+              <FloatingAvatar />
+              {children}
+            </MotionConfigWrapper>
+          </SmoothScrollProvider>
         </Providers>
       </body>
     </html>

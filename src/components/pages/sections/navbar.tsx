@@ -40,6 +40,17 @@ const Navbar = () => {
   const activeTabRef = useRef<HTMLAnchorElement | null>(null);
 
   const isManualScrolling = useRef(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Sync active tab on mount, scroll, hash change & page reload
   useEffect(() => {
@@ -144,14 +155,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-background/80 sticky top-0 z-50 w-full border-b px-4 py-2.5 backdrop-blur-sm md:px-8">
-      <div className="flex items-center justify-between gap-4">
-        {/* Logo */}
-        <a
-          href="#home"
-          className="group relative inline-flex items-center"
-          onClick={(e) => handleNavClick("home", e)}
-        >
+    <nav
+      className={cn(
+        "sticky top-0 z-50 w-full border-b px-4 py-2.5 backdrop-blur-md bg-background/80 transition-all duration-300 md:px-8",
+        isScrolled && "shadow-md bg-background/95 border-border/80"
+      )}
+    >
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo */}
+          <a
+            href="#home"
+            className="group relative inline-flex items-center"
+            onClick={(e) => handleNavClick("home", e)}
+          >
           <div className="absolute -top-2 -left-2 h-4 w-4 border-t-2 border-l-2 duration-200 group-hover:-top-1 group-hover:-left-1" />
           <span className="font-incognito text-foreground block -rotate-6 text-4xl leading-none tracking-[-0.08em] italic">
             Aress

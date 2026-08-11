@@ -14,7 +14,7 @@ import { Guestbook } from "../feature/guestbook";
 const PortfolioPage = () => {
   return (
     <>
-      <div className="no-scrollbar portfolio-container relative size-full min-h-screen overflow-y-auto">
+      <div className="no-scrollbar portfolio-container relative size-full min-h-screen">
         <BackgroundNoise className="z-50" />
 
         <div className="h-screen">
