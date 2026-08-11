@@ -30,18 +30,39 @@ const Navbar = () => {
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const activeTabRef = useRef<HTMLAnchorElement | null>(null);
 
-  // Update active tab from URL hash
+  const isManualScrolling = useRef(false);
+
+  // ScrollSpy IntersectionObserver to sync active tab on scroll & reload
   useEffect(() => {
-    const ids = navLinks.map((x) => x.id);
-    const setFromHash = () => {
-      const hash =
-        (typeof window !== "undefined" && window.location.hash) || "";
-      const id = (hash.replace("#", "") || "home") as NavId;
-      setActive(ids.includes(id) ? id : "home");
+    const ids: NavId[] = ["home", "about", "projects", "journey", "terminal"];
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      if (isManualScrolling.current) return;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id as NavId;
+          if (ids.includes(id)) {
+            setActive(id);
+          }
+        }
+      });
     };
-    setFromHash();
-    window.addEventListener("hashchange", setFromHash);
-    return () => window.removeEventListener("hashchange", setFromHash);
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "-20% 0px -40% 0px",
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [lang]);
 
   // Compute clip-path for animated tabs highlight
@@ -84,10 +105,16 @@ const Navbar = () => {
     }
     setActive(id);
     setOpen(false);
+    isManualScrolling.current = true;
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+
+    setTimeout(() => {
+      isManualScrolling.current = false;
+    }, 800);
   };
 
   return (
