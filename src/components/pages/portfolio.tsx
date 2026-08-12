@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { BackgroundNoise } from "../shared/backgrounds";
 import { IntroSplash } from "../shared/intro-splash";
 import Navbar from "./sections/navbar";
@@ -13,7 +13,7 @@ import TimelineSection from "./sections/timeline";
 import TerminalSection from "./sections/terminal";
 
 const PortfolioPage = () => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "undefined") {
       if ("scrollRestoration" in window.history) {
         window.history.scrollRestoration = "manual";

@@ -398,7 +398,7 @@ const PlaydateConsole = ({
         />
 
         <img
-          src="/welcome-help.png"
+          src="/welcome-help.webp"
           alt="welcome-help"
           width={150}
           className="absolute right-[492px] bottom-28 brightness-75 contrast-125 invert max-md:hidden dark:invert-0"

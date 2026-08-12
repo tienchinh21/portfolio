@@ -137,13 +137,13 @@ const MainScreen: React.FC<{
     {/* Background */}
     <img
       alt="console-background"
-      src="/console-background.png"
+      src="/console-background.webp"
       className="absolute inset-0 size-full object-cover object-center"
     />
 
     {/* Robot */}
     <div className="absolute -bottom-2.5 left-4 z-20 w-28 max-sm:w-24">
-      <img src="/robot-pixelated.png" alt="robot" className="w-full" />
+      <img src="/robot-pixelated.webp" alt="robot" className="w-full" />
       <Eyes
         className="absolute top-[28%] left-[35%]"
         classes={{

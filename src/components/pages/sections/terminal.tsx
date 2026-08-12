@@ -42,9 +42,22 @@ const TerminalSection: React.FC = () => {
 
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
+  const didMountRef = useRef(false);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (!didMountRef.current) {
+      didMountRef.current = true;
+      return;
+    }
+
+    const terminalBody = terminalBodyRef.current;
+    if (!terminalBody) return;
+
+    terminalBody.scrollTo({
+      top: terminalBody.scrollHeight,
+      behavior: "smooth",
+    });
   }, [history]);
 
   const handleCommand = (cmd: string) => {
@@ -203,6 +216,8 @@ const TerminalSection: React.FC = () => {
 
           {/* Terminal Body */}
           <div
+            ref={terminalBodyRef}
+            data-lenis-prevent
             onClick={() => inputRef.current?.focus()}
             className="h-[380px] overflow-y-auto p-4 md:p-6 font-mono text-sm text-foreground/90 leading-relaxed cursor-text"
           >

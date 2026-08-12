@@ -21,7 +21,7 @@ export const BackgroundNoise = ({ className, ...props }: NoiseProps) => {
         patternSize={250}
         patternScaleX={1}
         patternScaleY={1}
-        patternRefreshInterval={2}
+        patternRefreshInterval={24}
         patternAlpha={15}
         className="!size-full"
         {...props}

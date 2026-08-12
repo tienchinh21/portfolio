@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/og-image.png",
+        url: "/projects/portfolio-screenshot.webp",
         alt: "Ares's Portfolio",
       },
     ],

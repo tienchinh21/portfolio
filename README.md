@@ -1,7 +1,7 @@
 
 # Ares's Portfolio
 
-![Portfolio Screenshot](public/projects/portfolio-screenshot.png)
+![Portfolio Screenshot](public/projects/portfolio-screenshot.webp)
 
 A modern, interactive **[developer portfolio](https://next-portfolio-ares.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
 
@@ -99,4 +99,3 @@ Deployed easily via [Vercel](https://vercel.com/) (recommended).
   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ares/Portfolio&type=Date" />
   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ares/Portfolio&type=Date" />
 </picture>
-
