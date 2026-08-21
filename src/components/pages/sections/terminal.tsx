@@ -93,8 +93,8 @@ const TerminalSection: React.FC = () => {
         output = (
           <div className="space-y-1 text-xs md:text-sm text-foreground/90">
             <p><strong>Name:</strong> Nguyễn Tiến Chính</p>
-            <p><strong>Role:</strong> Fullstack Developer</p>
-            <p><strong>Bio:</strong> Xây dựng ứng dụng web hiện đại và hệ thống Admin CMS với React, Next.js, Node.js, NestJS, PostgreSQL và TypeScript. Chú trọng kiến trúc sạch, an toàn và tối ưu trải nghiệm người dùng.</p>
+            <p><strong>Role:</strong> {t.terminal.whoamiRole}</p>
+            <p><strong>Bio:</strong> {t.terminal.whoamiBio}</p>
           </div>
         );
         break;

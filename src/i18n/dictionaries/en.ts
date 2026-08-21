@@ -70,6 +70,49 @@ export const en = {
     subtitle: "Continuous learning path, key career milestones, and real-world project delivery.",
     collapse: "Collapse",
     details: "Details",
+    milestones: [
+      {
+        id: "m1",
+        year: "2025 - Present",
+        role: "Fullstack Developer",
+        company: "Freelance & Open Source Projects",
+        type: "work",
+        summary: "Building modern fullstack web apps, fintech architectures, and AI-driven workflow automations.",
+        details: [
+          "Architecting AI Commerce Marketplace & Mini Banking Payment Gateway platforms.",
+          "Developing personal interactive portfolio with Next.js 15, WebGL, and custom CLI terminal.",
+          "Optimizing Core Web Vitals, responsive design systems, and CI/CD deployment pipelines.",
+        ],
+        tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "Better Auth"],
+      },
+      {
+        id: "m2",
+        year: "04/2025 - 07/2026",
+        role: "Fullstack Developer",
+        company: "Incom.vn",
+        type: "work",
+        summary: "Built core fullstack features for a retail e-commerce platform serving 20+ business clients and integrated an AI assistant into Admin CMS.",
+        details: [
+          "Developed responsive UI and complex Admin CMS modules using React, Next.js, Ant Design, and TypeScript.",
+          "Engineered end-to-end cart-to-order-success payment flows, callback UIs, and resolved production device compatibility bugs.",
+          "Integrated OpenAI API into Admin CMS enabling admins to query business data using natural language.",
+        ],
+        tech: ["React", "Next.js", "TypeScript", "Ant Design", "NestJS", "PostgreSQL", "React Query", "Zustand"],
+      },
+      {
+        id: "m3",
+        year: "2022 - 2026",
+        role: "Information Technology",
+        company: "Ho Chi Minh City University of Technology (HUTECH)",
+        type: "education",
+        summary: "Academic foundation in Software Engineering, Algorithms, Database Systems, and Web Architecture.",
+        details: [
+          "Mastered Object-Oriented Programming (OOP), Data Structures, Algorithms, and Relational Database Systems.",
+          "Built solid practical skills in TypeScript, RESTful APIs, Clean Code principles, and Git collaboration.",
+        ],
+        tech: ["JavaScript (ES6+)", "TypeScript", "Node.js", "MySQL / PostgreSQL", "Git"],
+      },
+    ],
   },
   terminal: {
     sectionTitle: "Developer Terminal",
@@ -79,5 +122,7 @@ export const en = {
     accessGranted: "ACCESS GRANTED! PERMISSION ACCEPTED 🎉",
     hiredMsg: "Thank you for reaching out! I'm thrilled to discuss job opportunities and new collaborations.",
     chatTelegramBtn: "Chat via Telegram 🚀",
+    whoamiRole: "Fullstack Developer",
+    whoamiBio: "Building modern web applications and Admin CMS platforms with React, Next.js, Node.js, NestJS, PostgreSQL, and TypeScript. Focused on clean architecture, security, and optimal UX.",
   },
 };

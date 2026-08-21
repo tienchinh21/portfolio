@@ -64,12 +64,53 @@ export const vi = {
     aiDevopsDesc: "Tích hợp giải pháp AI vào sản phẩm (OpenAI API, pgvector) và đẩy nhanh tiến độ phát triển với AI Coding Agents, Docker và CI/CD.",
   },
   journey: {
-    sectionTitle: "Career Journey",
-    tagline: "MILESTONES & GROWTH",
+    sectionTitle: "Hành trình",
+    tagline: "CỘT MỐC & TRƯỞNG THÀNH",
     title: "Hành trình phát triển & Kinh nghiệm",
     subtitle: "Quá trình học hỏi, rèn luyện và các cột mốc thực hiện dự án thực tế.",
     collapse: "Thu gọn",
     details: "Chi tiết",
+    milestones: [
+      {
+        id: "m1",
+        year: "2025 - Hiện tại",
+        role: "Fullstack Developer",
+        company: "Freelance & Dự án Open Source",
+        type: "work",
+        summary: "Xây dựng các ứng dụng web fullstack hiện đại, kiến trúc fintech và hệ thống tự động hóa tích hợp AI.",
+        details: [
+          "Thiết kế và phát triển nền tảng AI Commerce Marketplace & Cổng thanh toán Mini Banking Ledger.",
+          "Phát triển trang Portfolio cá nhân tích hợp WebGL, Interactive Terminal CLI và Prisma ORM.",
+          "Tối ưu hóa chỉ số Core Web Vitals, hệ thống giao diện responsive và pipeline tự động hóa CI/CD.",
+        ],
+        tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "Better Auth"],
+      },
+      {
+        id: "m2",
+        year: "04/2025 - 07/2026",
+        role: "Fullstack Developer",
+        company: "Incom.vn",
+        summary: "Xây dựng các tính năng cốt lõi cho nền tảng thương mại điện tử phục vụ hơn 20 khách hàng doanh nghiệp và tích hợp trợ lý AI vào Admin CMS.",
+        details: [
+          "Phát triển giao diện responsive và các phân hệ Admin CMS bằng React, Next.js, Ant Design và TypeScript.",
+          "Triển khai luồng thanh toán giỏ hàng (cart-to-order-success), tích hợp cổng thanh toán và xử lý lỗi tương thích thiết bị/trình duyệt.",
+          "Tích hợp trợ lý AI (OpenAI API) vào Admin CMS hỗ trợ admin truy vấn dữ liệu kinh doanh bằng ngôn ngữ tự nhiên.",
+        ],
+        tech: ["React", "Next.js", "TypeScript", "Ant Design", "NestJS", "PostgreSQL", "React Query", "Zustand"],
+      },
+      {
+        id: "m3",
+        year: "2022 - 2026",
+        role: "Công nghệ Thông tin",
+        company: "Trường Đại học Công nghệ TP.HCM (HUTECH)",
+        summary: "Nền tảng học thuật về Kỹ thuật phần mềm, Thuật toán, Hệ cơ sở dữ liệu và Kiến trúc Web.",
+        details: [
+          "Rèn luyện tư duy Lập trình hướng đối tượng (OOP), Cấu trúc dữ liệu & Giải thuật và Cơ sở dữ liệu quan hệ.",
+          "Thực hành phát triển phần mềm với TypeScript, thiết kế RESTful API, nguyên lý Clean Code và làm việc nhóm qua Git.",
+        ],
+        tech: ["JavaScript (ES6+)", "TypeScript", "Node.js", "MySQL / PostgreSQL", "Git"],
+      },
+    ],
   },
   terminal: {
     sectionTitle: "Developer Terminal",
@@ -79,5 +120,7 @@ export const vi = {
     accessGranted: "ACCESS GRANTED! PERMISSION ACCEPTED 🎉",
     hiredMsg: "Cảm ơn bạn đã quan tâm! Tôi rất sẵn lòng thảo luận về công việc & cơ hội hợp tác mới.",
     chatTelegramBtn: "Chat ngay qua Telegram 🚀",
+    whoamiRole: "Fullstack Developer",
+    whoamiBio: "Xây dựng ứng dụng web hiện đại và hệ thống Admin CMS với React, Next.js, Node.js, NestJS, PostgreSQL và TypeScript. Chú trọng kiến trúc sạch, an toàn và tối ưu trải nghiệm người dùng.",
   },
 };

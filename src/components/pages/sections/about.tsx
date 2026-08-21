@@ -15,16 +15,21 @@ import { motion } from "motion/react";
 import { useTranslation } from "@/i18n/use-translation";
 
 const techStack = [
-  "Next.js 15",
   "React 19",
+  "Next.js 15",
   "TypeScript",
-  "Tailwind CSS v4",
   "Node.js",
+  "NestJS",
+  "PostgreSQL",
+  "MySQL",
+  "TypeORM",
   "Prisma ORM",
-  "MySQL / Postgres",
+  "Tailwind CSS v4",
+  "Ant Design",
   "Zustand",
   "TanStack Query",
-  "Framer Motion",
+  "Docker",
+  "CI/CD (GitHub Actions)",
   "Git",
 ];
 

@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Briefcase, Calendar, ChevronDown, Rocket, GraduationCap } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n/use-translation";
 
 interface Milestone {
   id: string;
@@ -18,55 +19,11 @@ interface Milestone {
   tech: string[];
 }
 
-const milestones: Milestone[] = [
-  {
-    id: "m1",
-    year: "2025 - Hiện tại",
-    role: "Fullstack Developer",
-    company: "Freelance & Open Source Projects",
-    type: "work",
-    summary: "Xây dựng các ứng dụng web hiện đại với Next.js 15, React 19, TypeScript và tự động hóa hệ thống.",
-    details: [
-      "Phát triển trang Portfolio cá nhân tích hợp WebGL, Interactive Terminal CLI và Prisma ORM.",
-      "Tối ưu chỉ số Core Web Vitals và trải nghiệm người dùng với Tailwind CSS v4 & Framer Motion.",
-      "Xây dựng bot tự động hóa quản lý nhóm Telegram và gửi thông báo real-time.",
-    ],
-    tech: ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Prisma ORM", "Better Auth"],
-  },
-  {
-    id: "m2",
-    year: "4/2025 - 7/2026",
-    role: "Fullstack Developer",
-    company: "Incom.vn",
-    type: "work",
-    summary: "Xây dựng các tính năng cốt lõi cho nền tảng thương mại điện tử phục vụ 20+ khách hàng doanh nghiệp và tích hợp trợ lý AI vào Admin CMS.",
-    details: [
-      "Phát triển giao diện responsive và các phân hệ Admin CMS bằng React, Next.js, Ant Design và TypeScript.",
-      "Triển khai luồng thanh toán giỏ hàng (cart-to-order-success), tích hợp cổng thanh toán và xử lý lỗi tương thích thiết bị/trình duyệt.",
-      "Tích hợp trợ lý AI (OpenAI API) vào Admin CMS hỗ trợ admin truy vấn dữ liệu kinh doanh bằng ngôn ngữ tự nhiên.",
-    ],
-    tech: ["React", "Next.js", "TypeScript", "Ant Design", "NestJS", "PostgreSQL", "React Query", "Zustand"],
-  },
-  {
-    id: "m3",
-    year: "2024 - 2025",
-    role: "Fullstack Exploration & Tech Mastery",
-    company: "Self-Driven Learning & Projects",
-    type: "education",
-    summary: "Nghiên cứu chuyên sâu về các công nghệ Web hiện đại, Clean Architecture & UI/UX.",
-    details: [
-      "Rèn luyện kỹ năng lập trình Clean Code, cấu trúc dự án chuẩn và làm việc với Git.",
-      "Thực hiện nhiều dự án cá nhân thực tế từ Landing Pages, Web Apps tới Telegram Automation.",
-    ],
-    tech: ["JavaScript (ES6+)", "TypeScript", "Node.js", "MySQL / PostgreSQL", "Git"],
-  },
-];
-
-import { useTranslation } from "@/i18n/use-translation";
-
 const TimelineSection: React.FC = () => {
   const { t } = useTranslation();
   const [expandedId, setExpandedId] = useState<string | null>("m1");
+
+  const milestones: Milestone[] = (t.journey.milestones || []) as Milestone[];
 
   const toggleExpand = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -120,24 +77,29 @@ const TimelineSection: React.FC = () => {
                 {item.details.map((detail, dIdx) => (
                   <div
                     key={dIdx}
-                    className="text-xs md:text-sm text-foreground/80 flex items-start gap-2"
+                    className="text-xs md:text-sm text-muted-foreground flex items-start gap-2"
                   >
-                    <span className="text-primary font-bold mt-0.5">•</span>
+                    <span className="text-primary mt-1">•</span>
                     <span>{detail}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-1.5 pt-2">
-                {item.tech.map((t) => (
-                  <Badge
-                    key={t}
-                    variant="outline"
-                    className="font-mono text-[10px] bg-background/80"
-                  >
-                    {t}
-                  </Badge>
-                ))}
+              <div className="pt-2">
+                <span className="text-[11px] font-mono text-muted-foreground/70 block mb-1.5 uppercase tracking-wider">
+                  Technologies:
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {item.tech.map((tItem) => (
+                    <Badge
+                      key={tItem}
+                      variant="outline"
+                      className="text-[10px] font-mono border bg-background/50 hover:bg-background/80 transition-colors"
+                    >
+                      {tItem}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </motion.div>
           )}
@@ -148,63 +110,69 @@ const TimelineSection: React.FC = () => {
 
   return (
     <SectionHeading text={t.journey.sectionTitle} id="journey">
-      <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16 max-w-5xl mx-auto">
-        <div className="mb-14 text-center max-w-xl mx-auto">
-          <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold inline-flex items-center gap-1.5 mb-2">
+      <div className="pt-14 p-6 md:pt-16 md:p-12 lg:p-16">
+        <div className="mb-10 max-w-2xl">
+          <span className="text-primary font-mono text-xs uppercase tracking-widest font-semibold flex items-center gap-1.5 mb-2">
             <Rocket className="size-3.5" /> {t.journey.tagline}
           </span>
           <h3 className="font-incognito text-2xl font-bold md:text-4xl">
             {t.journey.title}
           </h3>
-          <p className="text-muted-foreground mt-2 text-sm md:text-base">
+          <p className="text-muted-foreground mt-3 text-sm md:text-base leading-relaxed">
             {t.journey.subtitle}
           </p>
         </div>
 
-        {/* Centered Timeline Container */}
-        <div className="relative">
-          {/* Central Vertical Line */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 w-0.5 border-l-2 border-dashed border-foreground/20 -translate-x-1/2" />
+        {/* Mobile View: Vertical list */}
+        <div className="md:hidden space-y-4">
+          {milestones.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {renderCard(item)}
+            </motion.div>
+          ))}
+        </div>
 
-          <div className="space-y-10 md:space-y-14">
+        {/* Desktop View: Centered Timeline with Left & Right Cards */}
+        <div className="hidden md:block relative max-w-5xl mx-auto py-8">
+          {/* Timeline Center Line */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-border border-dashed border-l-2" />
+
+          <div className="space-y-12">
             {milestones.map((item, index) => {
-              const isExpanded = expandedId === item.id;
-              const isLeftCard = index % 2 === 0;
-
+              const isEven = index % 2 === 0;
               return (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
-                  className="relative flex flex-col md:flex-row items-stretch w-full"
+                  className={cn("relative flex items-center justify-between gap-8", {
+                    "flex-row-reverse": isEven,
+                  })}
                 >
-                  {/* Central Node Icon */}
-                  <div
-                    className={cn(
-                      "absolute left-4 md:left-1/2 top-6 size-9 rounded-full border-2 transition-all duration-300 flex items-center justify-center bg-background -translate-x-1/2 z-10",
-                      isExpanded
-                        ? "border-primary bg-primary text-primary-foreground shadow-[0_0_15px_rgba(59,130,246,0.6)] scale-110"
-                        : "border-foreground/30 hover:border-primary"
-                    )}
-                  >
+                  {/* Timeline Node in Center */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center size-10 rounded-full border-2 bg-background shadow-md border-primary/40">
                     {item.type === "work" ? (
-                      <Briefcase className="size-4" />
+                      <Briefcase className="size-4 text-primary" />
                     ) : (
-                      <GraduationCap className="size-4" />
+                      <GraduationCap className="size-4 text-primary" />
                     )}
                   </div>
 
-                  {/* LEFT SIDE COLUMN (Desktop) */}
-                  <div className="w-full md:w-1/2 pl-14 md:pl-0 md:pr-10">
-                    {isLeftCard ? renderCard(item) : <div className="hidden md:block" />}
+                  {/* Content Card Side (Takes up half width) */}
+                  <div className="w-[calc(50%-2rem)]">
+                    {renderCard(item)}
                   </div>
 
-                  {/* RIGHT SIDE COLUMN (Desktop) */}
-                  <div className="w-full md:w-1/2 pl-14 md:pl-10 mt-4 md:mt-0">
-                    {!isLeftCard ? renderCard(item) : <div className="hidden md:block" />}
-                  </div>
+                  {/* Empty Spacer Side */}
+                  <div className="w-[calc(50%-2rem)]" />
                 </motion.div>
               );
             })}
