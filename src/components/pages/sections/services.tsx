@@ -3,7 +3,7 @@
 import React from "react";
 import SectionHeading from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Layout, Server, Cpu, CheckCircle2, Sparkles } from "lucide-react";
+import { Layout, Server, CreditCard, Cpu, CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from "@/i18n/use-translation";
 
@@ -15,29 +15,45 @@ const Services: React.FC = () => {
       icon: Layout,
       title: t.services.frontendTitle,
       description: t.services.frontendDesc,
-      highlights: ["Next.js App Router", "Framer Motion Animations", "Responsive & Accessibility"],
-      badge: "Primary Focus",
+      highlights: [
+        "React 19 & Next.js 15 App Router",
+        "State Management (Zustand, React Query)",
+        "Responsive UI & Ant Design / Tailwind CSS",
+      ],
+      badge: "Frontend & CMS",
     },
     {
       icon: Server,
       title: t.services.backendTitle,
       description: t.services.backendDesc,
-      highlights: ["Prisma ORM & SQL", "Better Auth & Session", "Serverless API Routes"],
-      badge: "Core Service",
+      highlights: [
+        "NestJS & Node.js Architecture",
+        "JWT Auth & Role-Based Permissions (RBAC)",
+        "Clean DTO Validation & API Contracts",
+      ],
+      badge: "Core Backend",
+    },
+    {
+      icon: CreditCard,
+      title: t.services.databaseTitle,
+      description: t.services.databaseDesc,
+      highlights: [
+        "PostgreSQL, MySQL & TypeORM / Prisma",
+        "Cart-to-Order & Payment Gateway Integration",
+        "Query Optimization & Indexing",
+      ],
+      badge: "Database & Payments",
     },
     {
       icon: Cpu,
-      title: t.services.automationTitle,
-      description: t.services.automationDesc,
-      highlights: ["Telegram Bot API", "Node.js & TypeScript", "Real-time Workflows"],
-      badge: "Specialized",
-    },
-    {
-      icon: Code2,
-      title: t.services.cleanCodeTitle,
-      description: t.services.cleanCodeDesc,
-      highlights: ["TypeScript 5 Strict", "State Management (Zustand)", "Performance Optimization"],
-      badge: "Quality First",
+      title: t.services.aiDevopsTitle,
+      description: t.services.aiDevopsDesc,
+      highlights: [
+        "OpenAI API & Vector Search (pgvector)",
+        "CI/CD Workflows (GitHub Actions)",
+        "Docker & Docker Compose Containerization",
+      ],
+      badge: "AI & DevOps",
     },
   ];
 

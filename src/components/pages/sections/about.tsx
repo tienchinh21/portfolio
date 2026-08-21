@@ -148,7 +148,7 @@ const About = () => {
                         : t.about.available}
                     </Badge>
                     <Badge variant="outline">{t.about.yearsBadge}</Badge>
-                    <Badge variant="outline">Front-End Developer</Badge>
+                    <Badge variant="outline">Fullstack Developer</Badge>
                   </div>
                 </div>
               </div>

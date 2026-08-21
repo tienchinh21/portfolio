@@ -22,7 +22,7 @@ const milestones: Milestone[] = [
   {
     id: "m1",
     year: "2025 - Hiện tại",
-    role: "Front-End & Fullstack Developer",
+    role: "Fullstack Developer",
     company: "Freelance & Open Source Projects",
     type: "work",
     summary: "Xây dựng các ứng dụng web hiện đại với Next.js 15, React 19, TypeScript và tự động hóa hệ thống.",
@@ -35,16 +35,17 @@ const milestones: Milestone[] = [
   },
   {
     id: "m2",
-    year: "10/2025 - 01/2026",
-    role: "Front-End Developer",
-    company: "CimoSchool App Project",
+    year: "4/2025 - 7/2026",
+    role: "Fullstack Developer",
+    company: "Incom.vn",
     type: "work",
-    summary: "Xây dựng hệ thống học trực tuyến dành cho trường học với hàng trăm người dùng tương tác.",
+    summary: "Xây dựng các tính năng cốt lõi cho nền tảng thương mại điện tử phục vụ 20+ khách hàng doanh nghiệp và tích hợp trợ lý AI vào Admin CMS.",
     details: [
-      "Thiết kế giao diện người dùng mượt mà cho các tính năng quản lý khóa học, bài giảng và lớp học.",
-      "Tích hợp RESTful APIs và quản lý state tập trung đảm bảo dữ liệu luôn đồng bộ.",
+      "Phát triển giao diện responsive và các phân hệ Admin CMS bằng React, Next.js, Ant Design và TypeScript.",
+      "Triển khai luồng thanh toán giỏ hàng (cart-to-order-success), tích hợp cổng thanh toán và xử lý lỗi tương thích thiết bị/trình duyệt.",
+      "Tích hợp trợ lý AI (OpenAI API) vào Admin CMS hỗ trợ admin truy vấn dữ liệu kinh doanh bằng ngôn ngữ tự nhiên.",
     ],
-    tech: ["React", "TypeScript", "Tailwind CSS", "REST API", "Zustand"],
+    tech: ["React", "Next.js", "TypeScript", "Ant Design", "NestJS", "PostgreSQL", "React Query", "Zustand"],
   },
   {
     id: "m3",

@@ -92,9 +92,9 @@ const TerminalSection: React.FC = () => {
       case "whoami":
         output = (
           <div className="space-y-1 text-xs md:text-sm text-foreground/90">
-            <p><strong>Name:</strong> Nguyễn Tiến Chính (Aress)</p>
-            <p><strong>Role:</strong> Front-End / Fullstack Developer</p>
-            <p><strong>Bio:</strong> Xây dựng ứng dụng web hiện đại với Next.js, React, TypeScript & Tailwind CSS. Đam mê thiết kế UI/UX đẹp mắt và hiệu năng cao.</p>
+            <p><strong>Name:</strong> Nguyễn Tiến Chính</p>
+            <p><strong>Role:</strong> Fullstack Developer</p>
+            <p><strong>Bio:</strong> Xây dựng ứng dụng web hiện đại và hệ thống Admin CMS với React, Next.js, Node.js, NestJS, PostgreSQL và TypeScript. Chú trọng kiến trúc sạch, an toàn và tối ưu trải nghiệm người dùng.</p>
           </div>
         );
         break;
@@ -102,10 +102,10 @@ const TerminalSection: React.FC = () => {
       case "skills":
         output = (
           <div className="space-y-1 text-xs md:text-sm">
-            <p className="text-purple-400 font-bold">Tech Stack & Mastery:</p>
-            <p>• <strong>Frontend:</strong> React 19, Next.js 15, TypeScript, Tailwind CSS v4, Framer Motion</p>
-            <p>• <strong>Backend & DB:</strong> Node.js, Prisma ORM, PostgreSQL, MySQL, Better Auth</p>
-            <p>• <strong>State & Tools:</strong> Zustand, TanStack React Query, Git & GitHub, Turbopack</p>
+            <p className="text-purple-400 font-bold">Tech Stack &amp; Mastery:</p>
+            <p>• <strong>Frontend:</strong> React 19, Next.js 15, TypeScript, Ant Design, Tailwind CSS v4, Zustand, React Query</p>
+            <p>• <strong>Backend &amp; DB:</strong> Node.js, NestJS, RESTful APIs, PostgreSQL, MySQL, TypeORM, Prisma ORM</p>
+            <p>• <strong>DevOps &amp; AI:</strong> Git &amp; GitHub, CI/CD (GitHub Actions), Docker, Docker Compose, AI Coding Agents</p>
           </div>
         );
         break;
@@ -115,16 +115,16 @@ const TerminalSection: React.FC = () => {
           <div className="space-y-2 text-xs md:text-sm">
             <p className="text-cyan-400 font-bold">Featured Projects:</p>
             <div>
-              <p className="font-bold text-foreground">1. CimoSchool App</p>
-              <p className="text-muted-foreground text-xs">Ứng dụng học trực tuyến quản lý khóa học & lớp học.</p>
+              <p className="font-bold text-foreground">1. AI Commerce Marketplace Platform [In Progress]</p>
+              <p className="text-muted-foreground text-xs">Enterprise AI marketplace with Semantic Search (pgvector), Review Intelligence &amp; Text-to-SQL.</p>
             </div>
             <div>
-              <p className="font-bold text-foreground">2. Interactive Developer Portfolio</p>
-              <p className="text-muted-foreground text-xs">Next.js 15 + Prisma + WebGL + Custom Interactive CLI.</p>
+              <p className="font-bold text-foreground">2. Mini Banking Ledger &amp; Payment Gateway [In Progress]</p>
+              <p className="text-muted-foreground text-xs">Fintech banking wallet, double-entry ledger journal, HMAC merchant signing &amp; Admin CMS.</p>
             </div>
             <div>
-              <p className="font-bold text-foreground">3. Telegram Bot Automation</p>
-              <p className="text-muted-foreground text-xs">Bot tự động hóa quản lý nhóm Telegram bằng Node.js & TypeScript.</p>
+              <p className="font-bold text-foreground">3. Interactive Developer Portfolio [Live]</p>
+              <p className="text-muted-foreground text-xs">Cyberpunk portfolio with Next.js 15, React 19, Tailwind CSS v4, Prisma ORM, WebGL &amp; custom CLI.</p>
             </div>
           </div>
         );

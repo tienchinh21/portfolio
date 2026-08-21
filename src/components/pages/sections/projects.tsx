@@ -4,63 +4,69 @@ import SectionHeading from "@/components/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import HeadingLine from "@/components/ui/heading-line";
-import env from "@/config/env";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Github, ArrowUpRight, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from "@/i18n/use-translation";
 
 const Projects = () => {
+  const { t } = useTranslation();
+
   const projects = [
     {
-      title: "CimoSchool App",
-      description:
-        "Một ứng dụng học trực tuyến cho trường CimoSchool, bao gồm các tính năng như đăng ký khóa học, quản lý lớp học, và tương tác với giáo viên.",
-      tags: ["Education", "Fullstack"],
-      github: "https://github.com/binner99/cimoschool-app",
-      image: "/projects/2026-03-21 11.14.49.webp",
-      live: siteConfig.url,
-      date: "Tháng 10, 2025",
-      status: "completed",
+      title: t.projects.aiCommerceTitle,
+      description: t.projects.aiCommerceDesc,
+      tags: ["AI", "E-Commerce", "Fullstack", "Next.js", "NestJS"],
+      github: "https://github.com/tienchinh21/ai-commerce-marketplace-platform",
+      image: "/projects/portfolio-screenshot.webp",
+      live: null,
+      date: "2026",
+      status: "in_progress",
     },
     {
-      title: "Interactive Developer Portfolio",
-      description:
-        "Trang Portfolio cá nhân hiện đại xây dựng trên Next.js 15, React 19, Tailwind CSS v4, Prisma ORM, Better Auth, WebGL và Framer Motion với trải nghiệm mượt mà.",
-      tags: ["Portfolio", "Fullstack", "Next.js"],
+      title: t.projects.miniBankingTitle,
+      description: t.projects.miniBankingDesc,
+      tags: ["Fintech", "Payment Gateway", "Backend", "React", "PostgreSQL"],
+      github: "https://github.com/tienchinh21/mini-banking-payment-gateway",
+      image: "/projects/2026-03-21 11.14.49.webp",
+      live: null,
+      date: "2026",
+      status: "in_progress",
+    },
+    {
+      title: t.projects.portfolioTitle,
+      description: t.projects.portfolioDesc,
+      tags: ["Portfolio", "Next.js", "React 19", "WebGL", "Prisma"],
       github: siteConfig.github,
       image: "/projects/portfolio-screenshot.webp",
       live: siteConfig.url,
-      date: "Tháng 02, 2026",
-      status: "completed",
-    },
-    {
-      title: "Telegram Bot Automation",
-      description:
-        "Bot tự động hóa quản lý nhóm Telegram và tích hợp thông báo thời gian thực xây dựng bằng Node.js và TypeScript.",
-      tags: ["Bot", "Telegram", "Automation"],
-      github: "https://github.com/tienchinh21",
-      image: "/projects/2026-03-21 11.14.49.webp",
-      live: siteConfig.telegram,
-      date: "Tháng 12, 2025",
+      date: "2026",
       status: "completed",
     },
   ];
 
-  const tagColors = {
-    Education: "bg-green-500/10 text-green-600 border-green-500/30",
-    Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30",
-    Personal: "bg-purple-500/10 text-purple-600 border-purple-500/30",
-    Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30",
-    "Next.js": "bg-sky-500/10 text-sky-600 border-sky-500/30",
-    Telegram: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
-    Automation: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
-    Management: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30",
-    Bot: "bg-teal-500/10 text-teal-600 border-teal-500/30",
+  const tagColors: Record<string, string> = {
+    AI: "bg-purple-500/10 text-purple-600 border-purple-500/30 dark:text-purple-400",
+    "E-Commerce": "bg-emerald-500/10 text-emerald-600 border-emerald-500/30 dark:text-emerald-400",
+    Fintech: "bg-amber-500/10 text-amber-600 border-amber-500/30 dark:text-amber-400",
+    "Payment Gateway": "bg-rose-500/10 text-rose-600 border-rose-500/30 dark:text-rose-400",
+    Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30 dark:text-orange-400",
+    Backend: "bg-red-500/10 text-red-600 border-red-500/30 dark:text-red-400",
+    Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30 dark:text-blue-400",
+    "Next.js": "bg-sky-500/10 text-sky-600 border-sky-500/30 dark:text-sky-400",
+    "React 19": "bg-cyan-500/10 text-cyan-600 border-cyan-500/30 dark:text-cyan-400",
+    React: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30 dark:text-cyan-400",
+    NestJS: "bg-pink-500/10 text-pink-600 border-pink-500/30 dark:text-pink-400",
+    PostgreSQL: "bg-blue-500/10 text-blue-600 border-blue-500/30 dark:text-blue-400",
+    WebGL: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30 dark:text-indigo-400",
+    Prisma: "bg-teal-500/10 text-teal-600 border-teal-500/30 dark:text-teal-400",
+    Education: "bg-green-500/10 text-green-600 border-green-500/30 dark:text-green-400",
+    Automation: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30 dark:text-indigo-400",
   };
 
   return (
-    <SectionHeading id="projects" text="Projects">
+    <SectionHeading id="projects" text={t.projects.sectionTitle}>
       <div className="divide-y">
         {projects.map((project, index) => (
           <motion.div
@@ -118,12 +124,14 @@ const Projects = () => {
                       className={cn(
                         "h-2 w-2 rounded-full",
                         project.status === "completed"
-                          ? "animate-pulse bg-green-500"
-                          : "animate-pulse bg-yellow-500",
+                          ? "bg-green-500"
+                          : "animate-pulse bg-amber-500",
                       )}
                     />
-                    <span className="text-muted-foreground font-mono text-xs uppercase">
-                      {project.status}
+                    <span className="text-muted-foreground font-mono text-xs uppercase tracking-wider">
+                      {project.status === "completed"
+                        ? t.projects.statusCompleted
+                        : t.projects.statusInProgress}
                     </span>
                   </div>
                 </div>
@@ -149,7 +157,7 @@ const Projects = () => {
                       variant="outline"
                       className={cn(
                         "border font-mono text-xs",
-                        tagColors[tag as keyof typeof tagColors],
+                        tagColors[tag] || "bg-primary/10 text-primary border-primary/30",
                       )}
                     >
                       {tag}
@@ -157,46 +165,58 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/*  Buttons */}
+                {/* Buttons */}
                 <div className="flex flex-wrap gap-3">
-                  <Button
-                    asChild
-                    variant="default"
-                    size="lg"
-                    className="group/btn relative border-2 font-medium"
-                    disabled={!project.github}
-                  >
-                    <a
-                      href={project.github || undefined}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.github && (
+                    <Button
+                      asChild
+                      variant="default"
+                      size="lg"
+                      className="group/btn relative border-2 font-medium"
                     >
-                      <Github className="mr-2 h-4 w-4" />
-                      View Code
-                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </a>
-                  </Button>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        {t.projects.viewCode}
+                        <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </a>
+                    </Button>
+                  )}
 
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="group/btn border-2 font-medium"
-                    disabled={!project.live}
-                  >
-                    <a
-                      href={project.live || undefined}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.live ? (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="group/btn border-2 font-medium"
+                    >
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        {t.projects.liveDemo}
+                        <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="group/btn border-2 font-medium opacity-60 cursor-not-allowed"
+                      disabled
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Live Demo
-                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </a>
-                  </Button>
+                      {t.projects.statusInProgress}
+                    </Button>
+                  )}
                 </div>
 
-                {/*  slanted lines */}
+                {/* slanted lines */}
                 <div className="absolute -right-4 -bottom-32 w-full translate-x-1/4 translate-y-1/4 rotate-[-30deg]">
                   {/* 1st Line */}
                   <div className="to-background border-primary/80 from-primary via-primary/90 -ml-[4px] h-12 w-full border-t bg-linear-to-r via-30% transition-transform duration-300 group-hover:-translate-y-1" />
@@ -232,7 +252,7 @@ const Projects = () => {
               rel="noopener noreferrer"
             >
               <span className="bg-foreground/40 mr-2 inline-block h-px w-8 transition-all group-hover:w-12" />
-              VIEW ALL PROJECTS ON GITHUB
+              {t.projects.viewAllGithub}
               <span className="bg-foreground/40 ml-2 inline-block h-px w-8 transition-all group-hover:w-12" />
             </a>
           </Button>
