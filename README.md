@@ -1,101 +1,79 @@
+# Nguyen Tien Chinh — Interactive Developer Portfolio 🚀
 
-# Ares's Portfolio
+<p align="left">
+  <a href="https://tienchinh.me"><img src="https://img.shields.io/badge/Live_Demo-tienchinh.me-1677ff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Demo" /></a>
+  <img src="https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js 15" />
+  <img src="https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS v4" />
+</p>
 
 ![Portfolio Screenshot](public/projects/portfolio-screenshot.webp)
 
-A modern, interactive **[developer portfolio](https://next-portfolio-ares.vercel.app)** built with **Next.js 15**, **Prisma**, and **shadcn/ui**
-
-> This portfolio showcases my work, my projects, and my personality
+A modern, cyberpunk-inspired **[interactive developer portfolio](https://tienchinh.me)** built with **Next.js 15 (Turbopack)**, **React 19**, **Tailwind CSS v4**, **Prisma ORM**, and **WebGL**.
 
 ---
 
-## Tech Stack
+## ✨ Key Highlights & Features
 
-**Framework & Runtime**
-- [Next.js 15](https://nextjs.org/) — UI Framework
-- [TypeScript 5](https://www.typescriptlang.org/) — For type safety
+- **⚡ Modern Fullstack Stack:** Built with Next.js 15 App Router and React 19 server/client components.
+- **🖥️ Interactive Terminal CLI:** Fully functional in-browser terminal simulator (`help`, `whoami`, `skills`, `projects`, `sudo hire`, `clear`).
+- **🌐 Full Bilingual Support (i18n):** Instant client-side English / Vietnamese dictionary switching.
+- **🎮 Playful Interactive Elements:** WebGL particle background (OGL), custom audio sound FX (`use-sound`), retro Playdate console, and interactive Snake game.
+- **🔐 Auth & Data Layer:** Better Auth integration with Prisma ORM for community guestbook and interactive tasks.
 
-**Styling & UI**
-- [Tailwind CSS 4](https://tailwindcss.com/) — For Styling
-- [shadcn/ui](https://ui.shadcn.com/) — for accessible components
-- [Lucide Icons](https://lucide.dev/) — for Icon
-- [Framer Motion (motion)](https://motion.dev/) — for animation
+---
+
+## 💻 Tech Stack
+
+**Framework & Frontend**
+- [Next.js 15](https://nextjs.org/) — App Router with Turbopack
+- [React 19](https://react.dev/) — Modern UI library
+- [TypeScript 5](https://www.typescriptlang.org/) — Strict type safety
+- [Tailwind CSS v4](https://tailwindcss.com/) — Utility-first styling
+- [Framer Motion (`motion`)](https://motion.dev/) — Fluid animations
+- [Lucide Icons](https://lucide.dev/) — Icon system
+- [OGL](https://github.com/oframe/ogl) — Minimal WebGL library for particle effects
 
 **Backend & Data**
-- [Prisma ORM 6](https://www.prisma.io/) 
-- [Better Auth](https://better-auth.dev/)
-- [Zod](https://zod.dev/) — for runtime schema validation
-- [Umami](https://umami.is/) — Analytics
+- [Prisma ORM 6](https://www.prisma.io/) — Type-safe database client
+- [Better Auth](https://better-auth.dev/) — Authentication & session management
+- [Zod](https://zod.dev/) — Runtime schema validation
 
 **State & Utilities**
-- [Zustand](https://github.com/pmndrs/zustand)
-- [TanStack Query](https://tanstack.com/query)
-- [Day.js](https://day.js.org/)
-- [Lodash](https://lodash.com/)
+- [Zustand](https://github.com/pmndrs/zustand) — Global client state
+- [TanStack React Query](https://tanstack.com/query) — Server state caching
+- [Canvas Confetti](https://github.com/catdad/canvas-confetti) — Visual celebrations
+- [Day.js](https://day.js.org/) & [Lodash](https://lodash.com/)
 
 ---
 
+## 🏁 Run Locally
 
-## Run Project Locally
-
-### Clone the repository
+### 1. Clone the repository
 ```bash
-git clone https://github.com/Ares/portfolio.git
+git clone https://github.com/tienchinh21/portfolio.git
 cd portfolio
-````
+```
 
-### Install dependencies 
-
+### 2. Install dependencies
 ```bash
 npm install
 ```
 
-### Set up environment variables
+### 3. Configure Environment Variables
+Create a `.env` file based on `.env.example`:
+```bash
+cp .env.example .env
+```
 
-Create a `.env` & copy the variables from `.env.example` file in the root and configure it.
-
-### Generate Prisma Client
-
+### 4. Generate Prisma Client
 ```bash
 npx prisma generate
 ```
 
-### Run the development server
-
+### 5. Start Development Server
 ```bash
 npm run dev
 ```
 
-> Your portfolio should now be live at **[http://localhost:3000](http://localhost:3000)** 🎉
-
----
-
-## Deployment
-
-Deployed easily via [Vercel](https://vercel.com/) (recommended).
-
-1. Connect your GitHub repository.
-2. Add your environment variables in the Vercel dashboard.
-3. Deploy → done!
-
----
-
-## Connect With Me
-
-| Platform     | Link                                                             |
-| ------------ | ---------------------------------------------------------------- |
-| 💬 Telegram  | [https://t.me/EternalVortex](https://t.me/EternalVortex)      
-| 🐦 Twitter   | [https://twitter.com/Ares](https://twitter.com/Ares) |         |
-| 💻 Discord   | `ares`                                            |
-              
----
-
-
-
-## Star History
-**⭐ If you liked this project, give it a star — it helps a lot!**
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Ares/Portfolio&type=Date&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Ares/Portfolio&type=Date" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Ares/Portfolio&type=Date" />
-</picture>
+Open [http://localhost:3000](http://localhost:3000) in your browser to explore the portfolio!
